@@ -25,8 +25,26 @@
 	<gap:platform name="ios" />
 	<gap:platform name="android" />
 	
-    <gap:splash src="splash.jpg" />
     <icon src="icon.png" />
+	
+	<gap:plugin name="org.apache.cordova.device" />
+    <gap:plugin name="org.apache.cordova.geolocation" />
+    <gap:plugin name="org.apache.cordova.network-information" />
+    <gap:plugin name="org.apache.cordova.dialogs" />
+    <gap:plugin name="com.phonegap.plugins.pushplugin" />
+	
+	<preference name="prerendered-icon" value="false" />
+    <preference name="ios-statusbarstyle" value="default" />
+    <preference name="detect-data-types" value="false" />
+    <preference name="exit-on-suspend" value="false" />
+	
+	<preference name="android-minSdkVersion" value="9" />
+    <preference name="android-maxSdkVersion" value="19" />
+    <preference name="android-targetSdkVersion" value="14" />
+    <preference name="android-installLocation" value="auto" />
+    <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />
+    <preference name="splash-screen-duration" value="1000"/>
+    <preference name="KeyboardShrinksView" value="true" />
 	
 	<gap:config-file platform="ios" parent="UISupportedInterfaceOrientations" overwrite="true">
 		<array>

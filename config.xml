@@ -11,7 +11,7 @@
     <author href="http://infommodity.com/" email="jmorelos@softelligence.com.mx">Infommodity</author>
 
     <!-- Plataformas que soporte -->
-    <preference name="phonegap-version" value="3.1.0" />
+    <preference name="phonegap-version" value="3.5.0" />
     <gap:platform name="ios" />
     <gap:platform name="android" />
 
@@ -33,7 +33,7 @@
     <preference name="android-installLocation" value="auto" />
     <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />
     <preference name="splash-screen-duration" value="1000"/>
-    <preference name="KeyboardShrinksView" value="false" />
+    <preference name="KeyboardShrinksView" value="true" />
 
     <!-- Splash -->
     <gap:splash src="splash.jpg" />
@@ -58,5 +58,11 @@
     <gap:plugin name="com.phonegap.plugins.pushplugin" />
 
     <access origin="*" />
+	
+	<gap:config-file platform="ios" parent="UISupportedInterfaceOrientations" overwrite="true">
+		<array>
+		<string>UIInterfaceOrientationPortraitTop</string>
+		</array>	
+	</gap:config-file>
 
 </widget>

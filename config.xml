@@ -14,6 +14,7 @@
     <preference name="phonegap-version" value="3.1.0" />
     <gap:platform name="ios" />
     <gap:platform name="android" />
+    <gap:platform name="winphone" />
 
     <!-- Multi-Platform -->
     <preference name="orientation" value="portrait" />
@@ -36,7 +37,10 @@
     <preference name="KeyboardShrinksView" value="false" />
 
     <!-- Splash -->
-    <gap:splash src="splash.jpg" />
+    <gap:splash src="splash.png" />
+    <gap:splash src="splash-568h-2x.png" gap:platform="ios" width="640" height="1136" />
+    <gap:splash src="splash-2x.png" gap:platform="ios" width="640" height="960" />
+    <gap:splash src="Default.png" gap:platform="ios" width="320" height="480" />
 
     <!-- Icons -->
     <icon src="icon.png" />

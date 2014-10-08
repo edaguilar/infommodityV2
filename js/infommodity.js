@@ -237,9 +237,8 @@ function seleccionarCommodity(){
 }
 
 function seleccionarCommodityBase(){
-
     var idVariable =  window.sessionStorage.getItem("idBasesCommodity");
-	
+
     $("#listview-commodity").find("div[class='renglonVariable']").each(function(index){
         var idActual = $(this).find("input[type='hidden']").val();
         var img = $(this).find("img");
@@ -460,22 +459,13 @@ function cargarVarTabla() {
             });
             window.sessionStorage.setItem("idTabla",0);
 
-			for(var i = 0; i < dataSource._total; i++){
-				dataSource.data()[i].v1 = addCommas(dataSource.data()[i].v1);
-				dataSource.data()[i].v2 = addCommas(dataSource.data()[i].v2);
-				dataSource.data()[i].v3 = addCommas(dataSource.data()[i].v3);
-				dataSource.data()[i].v4 = addCommas(dataSource.data()[i].v4);
-				dataSource.data()[i].v5 = addCommas(dataSource.data()[i].v5);
-				dataSource.data()[i].v6 = addCommas(dataSource.data()[i].v6);
-			}
-			
             //Recorre todos para ver cuantos renglones
             dataSource.fetch();
             var dataSourceData = dataSource.data();
 
             for (var i = 0; i < dataSourceData.length; i++){
-                var dataItem = dataSourceData[i];				
-					
+                var dataItem = dataSourceData[i];
+
                 //Si es de dos renglones
                 if (dataItem.h5.length == 0){
                     var renglonTabla = $("#renglonTabla_" + i);
@@ -503,18 +493,7 @@ function cargarVarTabla() {
     cambiarEstiloHeaderParaTabla(true);
     cambiarColorFondoTabs();
 }
-function addCommas(nStr)
-{
-	nStr += '';
-	x = nStr.split('.');
-	x1 = x[0];
-	x2 = x.length > 1 ? '.' + x[1] : '';
-	var rgx = /(\d+)(\d{3})/;
-	while (rgx.test(x1)) {
-		x1 = x1.replace(rgx, '$1' + ',' + '$2');
-	}
-	return x1 + x2;
-}
+
 function cambiarEstiloHeaderParaTabla(agregar){
     var titulo = $("span[data-role='view-title']");
     if (agregar){
@@ -969,16 +948,13 @@ function obtenerTipoBase() {
             var dataSource = new kendo.data.DataSource({
                 data: resultado
             });
-			console.log(resultado);
+
             $("#listview-base").kendoMobileListView({
                 dataSource: dataSource,
                 template: $("#listview-template-tipo").text(),
                 click: function(e) {
-				console.log(e);
-                    if(e.dataItem != undefined){
                     window.sessionStorage.setItem("idTipoBase", e.dataItem.idTipo);
                     window.sessionStorage.setItem("tipoBase", e.dataItem.tipo);
-					}
                     seleccionarTipoBase();
                 }
             });
@@ -1075,7 +1051,7 @@ function cargarBasesTipo(){
         obtenerBasesCommodity();
     }
 
-    obtenerTipoBase();
+    //obtenerTipoBase();
     cambiarColorFondoTabs();
 }
 

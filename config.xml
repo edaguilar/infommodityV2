@@ -50,12 +50,12 @@
     <icon src="imgs/iconos/ios/icon-72_at_2x.png" gap:platform="ios" width="144" height="144" />
     <icon src="imgs/iconos/ios/icon-120.png" gap:platform="ios" width="120" height="120" />-->
 
-    <!-- Permisos -->
+    <!-- Permisos 
     <gap:plugin name="org.apache.cordova.device" />
     <gap:plugin name="org.apache.cordova.geolocation" />
     <gap:plugin name="org.apache.cordova.network-information" />
     <gap:plugin name="org.apache.cordova.dialogs" />
-    <gap:plugin name="com.phonegap.plugins.pushplugin" />
+    <gap:plugin name="com.phonegap.plugins.pushplugin" />-->
 
 	<content src="index.html" /> 
 	

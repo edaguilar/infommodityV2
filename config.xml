@@ -1,61 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<widget xmlns = "http://www.w3.org/ns/widgets"
-        xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "mx.com.softelligence.Infommodity"
-        versionCode="1"
-        version   = "1.0.1">
-
-    <!-- versionCode is optional and Android only -->
-    <name>Infommodity</name>
-    <description>Infommodity</description>
-    <author href="http://infommodity.com/" email="jmorelos@softelligence.com.mx">Infommodity</author>
-
-    <!-- Plataformas que soporte -->
-    <preference name="phonegap-version" value="3.1.0" />
-    <gap:platform name="ios" />
-    <gap:platform name="android" />
-
-    <!-- Multi-Platform -->
-    <preference name="orientation" value="portrait" />
-    <preference name="fullscreen" value="true" />
-
-    <!-- iOS Only -->
-    <preference name="prerendered-icon" value="false" />
-    <preference name="ios-statusbarstyle" value="default" />
-    <preference name="detect-data-types" value="false" />
-    <preference name="exit-on-suspend" value="false" />
-
-    <!-- Android only -->
-    <preference name="android-minSdkVersion" value="9" />
-    <preference name="android-maxSdkVersion" value="19" />
-    <preference name="android-targetSdkVersion" value="14" />
-    <preference name="android-installLocation" value="auto" />
-    <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />
-    <preference name="splash-screen-duration" value="1000"/>
-    <preference name="KeyboardShrinksView" value="false" />
-
-    <!-- Splash -->
-    <gap:splash src="splash.jpg" />
-
-    <!-- Icons -->
-    <icon src="icon.png" />
-    <icon src="imgs/iconos/android/ldpi.png" gap:platform="android" gap:density="ldpi" />
-    <icon src="imgs/iconos/android/mdpi.png" gap:platform="android" gap:density="mdpi" />
-    <icon src="imgs/iconos/android/hdpi.png" gap:platform="android" gap:density="hdpi" />
-    <icon src="imgs/iconos/android/xhdpi.png" gap:platform="android" gap:density="xhdpi" />
-    <icon src="imgs/iconos/ios/icon.png" gap:platform="ios" width="57" height="57" />
-    <icon src="imgs/iconos/ios/icon-72.png" gap:platform="ios" width="72" height="72" />
-    <icon src="imgs/iconos/ios/icon_at_2x.png" gap:platform="ios" width="114" height="114" />
-    <icon src="imgs/iconos/ios/icon-72_at_2x.png" gap:platform="ios" width="144" height="144" />
-    <icon src="imgs/iconos/ios/icon-120.png" gap:platform="ios" width="120" height="120" />
-
-    <!-- Permisos -->
-    <gap:plugin name="org.apache.cordova.device" />
-    <gap:plugin name="org.apache.cordova.geolocation" />
-    <gap:plugin name="org.apache.cordova.network-information" />
-    <gap:plugin name="org.apache.cordova.dialogs" />
-    <gap:plugin name="com.phonegap.plugins.pushplugin" />
-
-    <access origin="*" />
-
+<widget 
+ xmlns   = "http://www.w3.org/ns/widgets"        
+ xmlns:gap   = "http://phonegap.com/ns/1.0"       
+  id          = "com.infommodity.app"        
+  versionCode = "1"         
+  version     = "0.0.96">        
+	<name>InfommodityDemo</name>        
+	<description>            
+	InfommodityDemo
+	</description>        
+	<author email="eaguilar@softelligence.com.mx" href="http://www.softelligence.com.mx">            
+	Softelligence       
+	</author>        
+	<content src="index.html" />        
+	<access origin="*" />        
+	<preference name="Fullscreen" value="true" />        
+	<preference name="WebViewBounce" value="true" /> 
+	<preference name="orientation" value="landscape"/>
+	<gap:platform name="ios" />
+	<gap:platform name="android" />
+	<gap:config-file platform="ios" parent="UISupportedInterfaceOrientations" overwrite="true">
+		<array>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+		</array>	
+	</gap:config-file>
 </widget>
+

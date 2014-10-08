@@ -26,14 +26,14 @@
     <preference name="detect-data-types" value="false" />
     <preference name="exit-on-suspend" value="false" />-->
 
-    <!-- Android only -->
+    <!-- Android only 
     <preference name="android-minSdkVersion" value="9" />
     <preference name="android-maxSdkVersion" value="19" />
     <preference name="android-targetSdkVersion" value="14" />
     <preference name="android-installLocation" value="auto" />
     <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />
     <preference name="splash-screen-duration" value="1000"/>
-    <preference name="KeyboardShrinksView" value="true" />
+    <preference name="KeyboardShrinksView" value="true" />-->
 
     <!-- Splash -->
     <gap:splash src="splash.jpg" />
@@ -57,6 +57,8 @@
     <gap:plugin name="org.apache.cordova.dialogs" />
     <gap:plugin name="com.phonegap.plugins.pushplugin" />
 
+	<content src="index.html" /> 
+	
     <access origin="*" />
 	
 	<gap:config-file platform="ios" parent="UISupportedInterfaceOrientations" overwrite="true">

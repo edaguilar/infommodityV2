@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, minimum-scale=1, width=device-width"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="css/infommodity.css">
+    <link rel="stylesheet" type="text/css" href="css/kendo.mobile.all.min.css">
+    <script src="js/jquery-2.0.3.min.js"></script>
+    <script src="js/kendo.all.min.js"></script>
+    <script src="js/jquery.blockUI.js"></script>
+    <script src="js/infommodity.js"></script>
+    <script src="js/grafica/highcharts.js"></script>
+    <script src="js/grafica/themes/gray.js"></script>
+    <title>Gráfica</title>
+
+</head>
+<body>
+<div id="view" data-role="view" data-show="graficar">
+    <div class="header" data-role="header">
+        <div class="fondo">
+            <div class="logo"></div>
+        </div>
+        <div class="flechaAtras" ontouchstart="goBack()">
+        </div>
+        <div class="botonMenu" ontouchstart="goMenu()">
+        </div>
+        <div id="divTitulo" class="titulo" style="float:left; text-align: left; padding-left: 5px;">
+            -
+        </div>
+    </div>
+    <div data-role="content">
+        <div id="container" class="grafica"></div>
+    </div>
+    <img id="displayBox" src="imgs/Loader2.gif" width="80" height="80" style="display:none" alt="Cargando..."/>
+</div>
+
+
+<script type="application/javascript">
+    window.kendoMobileApplication = new kendo.mobile.Application(document.body, {
+        skin: "flat"
+    });
+</script>
+</body>
+</html>

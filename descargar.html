@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, minimum-scale=1, width=device-width"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="css/infommodity.css">
+    <link rel="stylesheet" type="text/css" href="css/kendo.mobile.all.min.css">
+    <script src="js/jquery-2.0.3.min.js"></script>
+    <script src="js/kendo.all.min.js"></script>
+    <script type="text/javascript" src="js/pdfobject.js"></script>
+    <script src="js/infommodity.js"></script>
+    <title>Documentos</title>
+</head>
+<body>
+<div id="view" data-role="view" data-show="cargarDescargar">
+    <div class="header" data-role="header">
+        <div class="fondo">
+            <div class="logo"></div>
+        </div>
+        <div class="flechaAtras" ontouchstart="goBack()">
+        </div>
+        <div class="botonMenu" ontouchstart="goMenu()">
+        </div>
+        <div class="titulo">
+            <span id="titulo">DESCARGAR</span>
+        </div>
+    </div>
+    <div data-role="content" class="cuerpoTablaDoc">
+
+        <embed src="http://infommodity.com/Admin/documentos/An%C3%A1lisis%20mat%20prim%209%20abr%20014.pdf" width="600" height="500" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+        </div>
+</div>
+
+<script type="application/javascript">
+    window.kendoMobileApplication = new kendo.mobile.Application(document.body, {
+        skin: "flat"
+    });
+</script>
+</body>
+</html>

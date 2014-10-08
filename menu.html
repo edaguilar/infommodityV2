@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, minimum-scale=1, width=device-width"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="css/infommodity.css">
+    <link rel="stylesheet" type="text/css" href="css/kendo.mobile.all.min.css">
+    <script src="js/jquery-2.0.3.min.js"></script>
+    <script src="js/kendo.all.min.js"></script>
+    <script src="js/jquery.blockUI.js"></script>
+    <script src="js/infommodity.js"></script>
+    <title>Menu</title>
+</head>
+<body>
+
+    <div id="view" data-role="view" data-show="cargarMenuPrincipal">
+        <div class="header" data-role="header">
+            <div class="fondo">
+                <div class="logo"></div>
+            </div>
+            <div class="titulo">
+                MENÚ
+            </div>
+        </div>
+        <div data-role="content" class="cuerpoTabla">
+        <ul id="listview"></ul>
+        </div>
+    </div>
+    <img id="displayBox" src="imgs/Loader2.gif" width="80" height="80" style="display:none" alt="Cargando..."/>
+    <script type="text/x-kendo-tmpl" id="listview-template">
+        <div class="renglonMenu">
+            <div class="menuIzqImg"><img src="imgs/menu/#:ImgUrl#" style="width:46px; height: 57px;"/></div>
+            <div class="menuTitulo">
+                #:Titulo#
+            </div>
+            <div class="menuFlecha">
+                <img src="imgs/menu/icono_flecha.png" style="width: 37px; height:54px"/>
+            </div>
+         </div>
+
+    </script>
+
+    <script type="application/javascript">
+	
+        window.kendoMobileApplication = new kendo.mobile.Application(document.body, {
+            skin: "flat"
+        });
+		
+    </script>
+	
+</body>
+</html>

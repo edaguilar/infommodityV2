@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, minimum-scale=1, width=device-width"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="css/infommodity.css">
+    <link rel="stylesheet" type="text/css" href="css/kendo.mobile.all.min.css">
+    <script src="js/jquery-2.0.3.min.js"></script>
+    <script src="js/kendo.all.min.js"></script>
+    <script src="js/jquery.blockUI.js"></script>
+    <script src="js/infommodity.js"></script>
+    <title>Bases</title>
+</head>
+<body>
+<div id="tabstrip-commodity" data-role="view" data-show="cargarBasesCommodity" data-title="COMMODITY"
+     data-layout="mobile-tabstrip">
+    <div data-role="content" class="cuerpoTabla">
+        <ul id="listview-commodity"></ul>
+    </div>
+</div>
+<div id="tabstrip-variables" data-role="view" data-show="cargarBasesTipo" data-title="TIPO DE BASE"
+     data-layout="mobile-tabstrip">
+
+    <div data-role="content" class="cuerpoTabla">
+        <ul id="listview-base"></ul>
+    </div>
+</div>
+<div id="tabstrip-analisis" data-role="view" data-show="cargarBasesUnidad" data-title="UNIDAD"
+     data-layout="mobile-tabstrip">
+     <div data-role="content" class="cuerpoTabla">
+            <ul id="listview-unidad"></ul>
+    </div>
+</div>
+<div id="tabstrip-tabla" data-role="view" data-show="cargarBasesTabla" data-title="TABLA"
+     data-layout="mobile-tabstrip">
+    <div data-role="content" class="cuerpoTabla">
+        <ul id="listview-tabla"></ul>
+    </div>
+</div>
+
+<div data-role="layout" data-id="mobile-tabstrip">
+    <header class="header" data-role="header">
+        <div data-role="navbar">
+            <div class="fondo">
+                <div class="logo"></div>
+            </div>
+            <div class="flechaAtras" ontouchstart="goMenu()">
+            </div>
+            <div class="titulo">
+                <span data-role="view-title"></span>
+            </div>
+        </div>
+    </header>
+    <div data-role="footer">
+        <div data-role="tabstrip">
+            <a href="#tabstrip-commodity" data-icon="commodity">COMMODITY</a>
+            <a href="#tabstrip-variables" data-icon="base">TIPO</a>
+            <a href="#tabstrip-analisis" data-icon="unidad">UNIDAD</a>
+            <a href="#tabstrip-tabla" data-icon="tabla">TABLA</a>
+        </div>
+    </div>
+
+</div>
+<img id="displayBox" src="imgs/Loader2.gif" width="80" height="80" style="display:none" alt="Cargando..."/>
+<script type="text/x-kendo-tmpl" id="listview-template">
+    <div class="renglonVariable">
+        <div class="docsIzqImg">
+            <img id="imgLista#:idCommodity#" src="imgs/variables/icono_lista_unselected.png" style="width:35px; height: 35px;"/>
+        </div>
+        <div class="variableTitulo">
+            #:commodity#
+        </div>
+        <input type="hidden" id="idCommodity" value="#:idCommodity#"/>
+    </div>
+</script>
+<script type="text/x-kendo-tmpl" id="listview-template-tipo">
+    <div class="renglonVariable">
+        <div class="docsIzqImg">
+            <img id="imgLista#:idTipo#" src="imgs/variables/icono_lista_unselected.png" style="width:35px; height: 35px;"/>
+        </div>
+        <div class="variableTitulo">
+            #:tipo#
+        </div>
+        <input type="hidden" id="idTipo" value="#:idTipo#"/>
+    </div>
+</script>
+<script type="text/x-kendo-tmpl" id="listview-template-unidad">
+    <div class="renglonVariable">
+        <div class="docsIzqImg">
+            <img id="imgLista#:idUnidad#" src="imgs/variables/icono_lista_unselected.png" style="width:35px; height: 35px;"/>
+        </div>
+        <div class="variableTitulo">
+            #:unidad#
+        </div>
+        <input type="hidden" id="idUnidad" value="#:idUnidad#"/>
+    </div>
+</script>
+<script type="text/x-kendo-tmpl" id="listview-template-variable">
+    <div class="renglonVariable">
+        <div class="docsIzqImg">
+            <img id="imgLista" src="imgs/variables/icono_lista_unselected.png" style="width:35px; height: 35px;"/>
+        </div>
+        <div class="variableTitulo">
+            #:variable#
+        </div>
+        <input type="hidden" id="idVariable" value="#:variable#"/>
+    </div>
+</script>
+<script type="text/x-kendo-tmpl" id="listview-template-tabla">
+    <div id="renglonTabla" class="divTablaBases2">
+        <div class="headerTabla">
+            <div class="tablaVariableBase">
+                <span><b>#:commodity#&nbsp;</b></span>
+            </div>
+            <!--<div class="tablaVariableOrigen">
+              <span><b>O:</b> #:origen#</span>
+            </div>-->
+            <div class="destino" style="padding-left:5px; width:100%">
+                <span>#:destino#</span>
+            </div>
+        </div>
+        <div style="height:100%">
+            # var tituloEntrada = commodity + " - Base en " + destino; #
+            # var tituloLleno = commodity + " - Spot/FWD " + destino; #
+            <table id="tablaVariables" class="tablaBases" >
+                <tr>
+                    <td class="txtIzq">Base en Punto de Llegada</td>
+                    <td class="txtDer">#:puntoLlegada#</td>
+                    <td>
+                        <div class="btnIrAGrafica"
+                             ontouchstart="irGraficaBases('#:origen#','#:destino#','llegada','#:tituloEntrada#')">
+                            <img src="imgs/bases/boton_graficas_blanco.png" style="width:31px; height:23px"/>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="txtIzq" style="padding-bottom: 6px;">Precio Spot/Forward</td>
+                    <td class="txtDer" style="padding-bottom: 6px;">#:precioSpot_Forward#</td>
+                    <td>
+                        <div class="btnIrAGrafica"
+                             ontouchstart="irGraficaBases('#:origen#','#:destino#','spot','#:tituloLleno#')">
+                            <img src="imgs/bases/boton_graficas_blanco.png" style="width:31px; height:23px"/>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</script>
+
+<script type="application/javascript">
+    window.kendoMobileApplication = new kendo.mobile.Application(document.body, {
+        skin: "flat"
+    });
+</script>
+</body>
+</html>

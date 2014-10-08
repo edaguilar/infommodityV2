@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Infommodity" Class="BDDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=WIN-7281Q9QAQG3\SQL2008EXP;Initial Catalog=Infommodity;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="Conexion" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.documentos" Member="documentos">
+    <Type Name="documento">
+      <Column Name="idDocumento" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="titulo" Type="System.String" DbType="VarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="fechaPublicacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="nombreArchivo" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="rutaArchivo" Type="System.String" DbType="VarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="fechaRegistro" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Commodity" Member="Commodities">
+    <Type Name="Commodity">
+      <Column Name="idCommodity" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Simbolo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="InvBurshellTon" Type="System.Decimal" DbType="Decimal(18,6)" CanBeNull="true" />
+      <Column Name="BurshellTon" Type="System.Decimal" DbType="Decimal(18,6)" CanBeNull="true" />
+      <Column Name="PromedioMovil" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ContratosFuturos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UnidadOrigen" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UnidadDestino" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VariablesCommodities" Member="VariablesCommodities">
+    <Type Name="VariablesCommodity">
+      <Column Name="idVariable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idCommodity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="comentarios" Type="System.String" DbType="VarChar(3000)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vValores" Member="vValores">
+    <Type Name="vValore">
+      <Column Name="anio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="mes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Commodity" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="v1" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="v2" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="v3" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="v5" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="v4" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="total" Type="System.Decimal" DbType="Decimal(21,2)" CanBeNull="true" />
+      <Column Name="h1" Type="System.String" DbType="Char(80)" CanBeNull="true" />
+      <Column Name="h2" Type="System.String" DbType="Char(80)" CanBeNull="true" />
+      <Column Name="h3" Type="System.String" DbType="Char(80)" CanBeNull="true" />
+      <Column Name="h4" Type="System.String" DbType="Char(80)" CanBeNull="true" />
+      <Column Name="h5" Type="System.String" DbType="Char(80)" CanBeNull="true" />
+      <Column Name="unidades" Type="System.String" DbType="Char(50)" CanBeNull="true" />
+      <Column Name="fechaCaptura" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="variable" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="idCommodity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="comentario" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="idVariable" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idBatch" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idValores" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DispositivosClientes" Member="DispositivosClientes">
+    <Type Name="DispositivosCliente">
+      <Column Name="idDispositivoCliente" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idClienteMovil" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tokenNotificacion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="idDispositivo" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="activo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ClientesMovil" Member="ClientesMovils">
+    <Type Name="ClientesMovil">
+      <Column Name="idClienteMovil" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="correo" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="clave" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="razonSocial" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="rfc" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
+      <Column Name="estado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="municipio" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="colonia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="direccion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="correoFacturacion" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="vigencia" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="activo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="ClientesMovil_NotificacionesCliente" Member="NotificacionesClientes" ThisKey="idClienteMovil" OtherKey="idClienteMovil" Type="NotificacionesCliente" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CommoditiesComentarios" Member="CommoditiesComentarios">
+    <Type Name="CommoditiesComentario">
+      <Column Name="idComentario" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idCommodity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Comentario" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Graficas" Member="Graficas">
+    <Type Name="Grafica">
+      <Column Name="idGrafica" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Grafica_GraficaItem" Member="GraficaItems" ThisKey="idGrafica" OtherKey="idGrafica" Type="GraficaItem" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GraficaItems" Member="GraficaItems">
+    <Type Name="GraficaItem">
+      <Column Name="idGraficaItem" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idGrafica" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="valorX" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="valorY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Grafica_GraficaItem" Member="Grafica" ThisKey="idGrafica" OtherKey="idGrafica" Type="Grafica" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ArbolNotificacion" Member="ArbolNotificacions">
+    <Type Name="ArbolNotificacion">
+      <Column Name="idElemento" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idElementoPadre" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Association Name="ArbolNotificacion_NotificacionesCliente" Member="NotificacionesClientes" ThisKey="idElemento" OtherKey="idElemento" Type="NotificacionesCliente" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NotificacionesClientes" Member="NotificacionesClientes">
+    <Type Name="NotificacionesCliente">
+      <Column Name="idNotificacionCliente" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idClienteMovil" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idElemento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ArbolNotificacion_NotificacionesCliente" Member="ArbolNotificacion" ThisKey="idElemento" OtherKey="idElemento" Type="ArbolNotificacion" IsForeignKey="true" />
+      <Association Name="ClientesMovil_NotificacionesCliente" Member="ClientesMovil" ThisKey="idClienteMovil" OtherKey="idClienteMovil" Type="ClientesMovil" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

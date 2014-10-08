@@ -14,11 +14,10 @@
     <preference name="phonegap-version" value="3.5.0" />
     <gap:platform name="ios" />
     <gap:platform name="android" />
-    <gap:platform name="winphone" />
 
     <!-- Multi-Platform -->
     <preference name="orientation" value="portrait" />
-    <preference name="fullscreen" value="true" />
+    <preference name="fullscreen" value="false" />
 
     <!-- iOS Only -->
     <preference name="target-device" value="handset" />

@@ -11,7 +11,7 @@
     <author href="http://infommodity.com/" email="jmorelos@softelligence.com.mx">Infommodity</author>
 
     <!-- Plataformas que soporte -->
-    <preference name="phonegap-version" value="3.1.0" />
+    <preference name="phonegap-version" value="3.5.0" />
     <gap:platform name="ios" />
     <gap:platform name="android" />
     <gap:platform name="winphone" />

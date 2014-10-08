@@ -25,6 +25,9 @@
 	<gap:platform name="ios" />
 	<gap:platform name="android" />
 	
+    <gap:splash src="splash.jpg" />
+    <icon src="icon.png" />
+	
 	<gap:config-file platform="ios" parent="UISupportedInterfaceOrientations" overwrite="true">
 		<array>
 		<string>UIInterfaceOrientationPortraitTop</string>

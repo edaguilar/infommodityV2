@@ -18,6 +18,7 @@
     <!-- Multi-Platform -->
     <preference name="orientation" value="portrait" />
     <preference name="fullscreen" value="true" />
+	<preference name="WebViewBounce" value="true" /> 
 
     <!-- iOS Only 
     <preference name="prerendered-icon" value="false" />

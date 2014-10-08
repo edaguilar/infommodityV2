@@ -11,7 +11,7 @@
     <author href="http://infommodity.com/" email="jmorelos@softelligence.com.mx">Infommodity</author>
 
     <!-- Plataformas que soporte -->
-    <preference name="phonegap-version" value="3.5.0" />
+    <preference name="phonegap-version" value="3.1.0" />
     <gap:platform name="ios" />
     <gap:platform name="android" />
 
@@ -20,7 +20,7 @@
     <preference name="fullscreen" value="false" />
 
     <!-- iOS Only -->
-    <preference name="target-device" value="handset" />
+    <preference name="target-device" value="universal" />
     <preference name="prerendered-icon" value="false" />
     <preference name="ios-statusbarstyle" value="default" />
     <preference name="detect-data-types" value="false" />

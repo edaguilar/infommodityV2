@@ -13,7 +13,7 @@ function iniciarSesion() {
         correo : usuario,
         clave : contrasena,
         idDispositivo: "ED",
-        dispositivo: device.platform,
+        dispositivo: window.device.name,
         poshToken: "00"
     });
     console.log(params);

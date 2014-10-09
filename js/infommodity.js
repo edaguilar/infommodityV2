@@ -9,7 +9,7 @@ function iniciarSesion() {
     var contrasena = $("#txtPassword").val();
 	var disp = "No Disp";
 	if (isPhone()) {
-		disp = device.name;
+		disp = device.platform;
 	}
 
     var url = urlBase + "AutentificarUsuario";

@@ -21,17 +21,18 @@
 	<preference name="WebViewBounce" value="true" /> 
 	<preference name="orientation" value="portrait"/>
 		
-    <preference name="phonegap-version" value="3.5.0" />
+    <preference name="phonegap-version" value="3.1.0" />
 	<gap:platform name="ios" />
 	<gap:platform name="android" />
 	
     <icon src="icon.png" />
 	
-	<gap:plugin name="org.apache.cordova.device" />
-    <gap:plugin name="org.apache.cordova.geolocation" />
-    <gap:plugin name="org.apache.cordova.network-information" />
-    <gap:plugin name="org.apache.cordova.dialogs" />
-    <gap:plugin name="com.phonegap.plugins.pushplugin" />
+	<gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />
+	<gap:plugin name="org.apache.cordova.device" version="0.2.12" />
+	<gap:plugin name="org.apache.cordova.dialogs" version="0.2.10" />
+	<gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
+	<gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
+
 	
 	<preference name="prerendered-icon" value="false" />
     <preference name="ios-statusbarstyle" value="default" />
@@ -44,7 +45,6 @@
     <preference name="android-installLocation" value="auto" />
     <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />
     <preference name="splash-screen-duration" value="1000"/>
-    <preference name="KeyboardShrinksView" value="true" />
 	
 	<gap:config-file platform="ios" parent="UISupportedInterfaceOrientations" overwrite="true">
 		<array>

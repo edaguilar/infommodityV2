@@ -10,9 +10,9 @@ function iniciarSesion() {
     var params = JSON.stringify({
         correo : usuario,
         clave : contrasena,
-        idDispositivo: "Jorge",
-        dispositivo: "HTML",
-        poshToken: "00"
+        idDispositivo: "1",
+        dispositivo: "1",
+        poshToken: "1"
     });
     console.log(params);
     //$.support.cors = true;

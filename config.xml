@@ -3,7 +3,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "mx.com.softelligence.Infommodity"
         versionCode="1"
-        version   = "1.0.1">
+        version   = "0.1.20">
 
     <!-- versionCode is optional and Android only -->
     <name>Infommodity</name>
@@ -11,7 +11,7 @@
     <author href="http://infommodity.com/" email="eaguilar@softelligence.com.mx">Infommodity</author>
 
     <!-- Plataformas que soporte -->
-    <preference name="phonegap-version" value="3.1.0" />
+    <preference name="phonegap-version" value="3.5.0" />
     <gap:platform name="ios" />
     <gap:platform name="android" />
 
@@ -34,7 +34,7 @@
     <preference name="android-installLocation" value="auto" />
     <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />
     <preference name="splash-screen-duration" value="1000"/>
-    <preference name="KeyboardShrinksView" value="false" />
+    <preference name="KeyboardShrinksView" value="true" />
 
     <!-- Splash 
     <gap:splash src="splash.png" />-->
@@ -43,11 +43,12 @@
     <icon src="icon.png" />
 
     <!-- Permisos -->
-    <gap:plugin name="org.apache.cordova.device" />
-    <gap:plugin name="org.apache.cordova.geolocation" />
-    <gap:plugin name="org.apache.cordova.network-information" />
-    <gap:plugin name="org.apache.cordova.dialogs" />
-    <gap:plugin name="com.phonegap.plugins.pushplugin" />
+    <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />
+	<gap:plugin name="org.apache.cordova.device" version="0.2.12" />
+	<gap:plugin name="org.apache.cordova.dialogs" version="0.2.10" />
+	<gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
+	<gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
+
 
     <access origin="*" />
 	<content src="index.html" /> 

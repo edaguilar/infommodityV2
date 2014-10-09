@@ -594,7 +594,7 @@ var variablesUnidadActivo = true;
 function graficar() {
     cargando();
     var container = $("#container");
-
+	
     var idCommodity = window.sessionStorage.getItem("idCommodity");
     var variable = window.sessionStorage.getItem("variable");
     var idVariable = window.sessionStorage.getItem("idVariable");
@@ -635,7 +635,10 @@ function graficar() {
             var numeroDeValores = 0;
             var ordenSerie = 20;
             $.each(resultado,function(i,obj){
-                var encabezado = obj.encabezado;
+				if(obj.encabezado.search(' AM') > 0 || obj.encabezado.search(' PM') > 0)
+                var encabezado = obj.encabezado.substring(0,obj.encabezado.indexOf(' '))
+				else
+				var encabezado = obj.encabezado;
                 var serie = obj.serie;
                 var valor = obj.valor;
 
@@ -673,16 +676,21 @@ function graficar() {
                 container.css("height",altoDeLaGrafica);
                 altoAux = altoDeLaGrafica;
             }
+			
+			container.css("margin-top", "0");
+			container.css("margin-bottom", "0");
+			container.css("margin-left", "auto");
+			container.css("margin-right", "auto");
             //container.css("width",ancho);
 
-            var titulo = renglonVariable;
+            var titulo = "";
 
             $(function () {
                 $('#container').highcharts({/**/
                 chart: {
                     type: 'line',
                     inverted: true,
-                    spacingRight: 25
+                    spacingRight: 50		
                 },
                     title: {
                         text: ' ',
@@ -691,11 +699,14 @@ function graficar() {
                     legend: {
                         align:'top',
                         verticalAlign:'top',
-                        margin:20,
-                        x: 60,
+                        margin:10,					
                         reversed: true,
-                        width:270
+                        width:380,
+						itemStyle: {
+							fontSize: '8px'
+						}
                     },
+
                     xAxis: {
                         categories: categorias,
                         labels: {
@@ -711,6 +722,11 @@ function graficar() {
                             text: titulo
                         },
                         labels: {
+							rotation: 90,
+                            align: 'right',
+                            style: {
+                                fontSize: '8px'
+                            },
                             formatter: function () {
                                 return Highcharts.numberFormat(this.value, 0, '.', ',')
                             }
@@ -733,8 +749,11 @@ function graficar() {
                         series
 
                 });
+				
+				var legenda = document.children[0].children[1].children[0].children[1].children[1].children[0].children[0].children[0].children[9];
+				legenda.setAttribute("transform", "translate(".concat(($(window).height()-260).toString()).concat(",10),rotate(90)"));							
             });
-
+			
             terminoCargando();
         },
         error: function (e) {
@@ -1266,7 +1285,7 @@ function obtenerGraficaBases(){
                 chart: {
                     type: 'spline',
                     inverted: true,
-                    spacingRight: 25,
+                    spacingRight: 40,
                     width: ancho
                 },
                     title: {
@@ -1276,12 +1295,12 @@ function obtenerGraficaBases(){
                     legend: {
                         align:'top',
                         verticalAlign:'right',
-                        margin:20,
+                        margin:10,
                         x: 60,
-						style: {
-                                fontSize: '8px',
-								transform: rotate(-90.0)
-                            }
+						width:270,
+						itemStyle: {
+							fontSize: '8px'
+						}
                     },
                     xAxis: {
                         type: 'datetime',
@@ -1319,6 +1338,8 @@ function obtenerGraficaBases(){
                         series
 
                 });
+				var legenda = document.children[0].children[1].children[0].children[1].children[1].children[0].children[0].children[0].children[9];
+				legenda.setAttribute("transform", "translate(".concat(($(window).height()-260).toString()).concat(",10),rotate(90)"));							
             });
 
             terminoCargando();

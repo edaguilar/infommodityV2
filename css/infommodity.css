@@ -6,8 +6,8 @@ body {
     min-height:100%;
     /*position:relative;*/
     margin:0 auto;
+	
 }
-
 .fondoLogin {
     background: url('../imgs/login/fnd_login.jpg') no-repeat top center !important;
     background-size:100%;

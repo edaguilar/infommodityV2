@@ -13,6 +13,8 @@ var urlBase = 'http://app.infommodity.com/Infommodity.svc/';
         }
 
 function iniciarSesion() {
+	
+    console.log("Hola Mundo!");
     var usuario = $("#txtUsuario").val();
     var contrasena = $("#txtPassword").val();
 	

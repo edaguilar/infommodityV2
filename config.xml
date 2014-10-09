@@ -4,7 +4,7 @@
  xmlns:gap   = "http://phonegap.com/ns/1.0"       
   id          = "com.infommodity.app"        
   versionCode = "1"         
-  version     = "0.1.15">        
+  version     = "0.1.17">        
 	<name>Infommodity</name>        
 	<description>            
 	Infommodity

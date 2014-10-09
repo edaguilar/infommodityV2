@@ -4,6 +4,13 @@ var urlBase = 'http://app.infommodity.com/Infommodity.svc/';
  function tokenHandler(result) {
             window.localStorage.setItem("pushID", result);
         }
+		function successHandler(result) {
+            //alert('Callback Success! Result = '+result)
+        }
+
+        function errorHandler(error) {
+            alert(error);
+        }
 
 function iniciarSesion() {
     var usuario = $("#txtUsuario").val();

@@ -1852,3 +1852,7 @@ function cargando() {
 function terminoCargando() {
     setTimeout($.unblockUI, 10)
 }
+
+function isPhone() {
+    return (typeof cordova != "undefined" || typeof PhoneGap != "undefined" || typeof phonegap != "undefined") && /^file:\/{3}[^\/]/i.test(window.location.href) && /ios|iphone|ipod|ipad|android/i.test(navigator.userAgent)
+}

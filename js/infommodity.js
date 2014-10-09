@@ -1,18 +1,49 @@
 var urlBase = 'http://app.infommodity.com/Infommodity.svc/';
 
 /* LOGIN */
+ function tokenHandler(result) {
+            window.localStorage.setItem("pushID", result);
+        }
 
 function iniciarSesion() {
     var usuario = $("#txtUsuario").val();
     var contrasena = $("#txtPassword").val();
+	
+	var pushID = window.localStorage.getItem("pushID");
+	 if (isPhone() && (pushID == null || pushID == 'null' || pushID == '')){
+                if (device.platform == 'android' || device.platform == 'Android' )
+                {
+                    pushNotification = window.plugins.pushNotification;
+                    pushNotification.register(
+                            successHandler,
+                            errorHandler, {
+                                "senderID":"239411080530",
+                                "ecb":"onNotificationGCM"
+                            });
+                }
+                else
+                {
+                    pushNotification = window.plugins.pushNotification;
+                    pushNotification.register(
+                            tokenHandler,
+                            errorHandler, {
+                                "badge":"true",
+                                "sound":"true",
+                                "alert":"true",
+                                "ecb":"onNotificationAPN"
+                            });
+                }
+				pushID = window.localStorage.getItem("pushID");
+	 }
+	
 
     var url = urlBase + "AutentificarUsuario";
     var params = JSON.stringify({
         correo : usuario,
         clave : contrasena,
-        idDispositivo: "1",
-        dispositivo: "1",
-        poshToken: "1"
+        idDispositivo: "Jorge",
+        dispositivo: device.platform,
+        poshToken: pushID
     });
     console.log(params);
     //$.support.cors = true;

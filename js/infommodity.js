@@ -23,8 +23,8 @@ function iniciarSesion() {
     var params = JSON.stringify({
         correo : usuario,
         clave : contrasena,
-        idDispositivo: "Jorge",
-        dispositivo: "00",//device.platform,
+        idDispositivo: "ED",
+        dispositivo: device.platform,
         poshToken: "00"
     });
     console.log(params);

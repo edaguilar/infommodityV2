@@ -3,8 +3,6 @@ var urlBase = 'http://app.infommodity.com/Infommodity.svc/';
 /* LOGIN */
 
 function iniciarSesion() {
-	
-    console.log("Inicio");
     var usuario = $("#txtUsuario").val();
     var contrasena = $("#txtPassword").val();
 
@@ -12,8 +10,8 @@ function iniciarSesion() {
     var params = JSON.stringify({
         correo : usuario,
         clave : contrasena,
-        idDispositivo: "ED",
-        dispositivo: device.platform,
+        idDispositivo: "Jorge",
+        dispositivo: "HTML",
         poshToken: "00"
     });
     console.log(params);

@@ -7,13 +7,17 @@ function iniciarSesion() {
     console.log("Inicio");
     var usuario = $("#txtUsuario").val();
     var contrasena = $("#txtPassword").val();
+	var disp = "No Disp";
+	if (isPhone()) {
+		disp = device.name;
+	}
 
     var url = urlBase + "AutentificarUsuario";
     var params = JSON.stringify({
         correo : usuario,
         clave : contrasena,
         idDispositivo: "ED",
-        dispositivo: "0",//window.device.name,
+        dispositivo: disp,
         poshToken: "00"
     });
     console.log(params);

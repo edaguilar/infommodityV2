@@ -16,10 +16,48 @@
     <script type="text/javascript" src="PushNotification.js"></script>
     <title>Inicio</title>
     <script>
+		 if(isPhone()){
+            document.addEventListener("deviceready",onDeviceReady,false)
+        }
+        else{
+            onDeviceReady()
+        }
+		
+		
+		function onDeviceReady() {
+            console.log("Entro a onDeviceReady()");
+
+            var pushID = window.localStorage.getItem("pushID");
+
+            if (isPhone() && (pushID == null || pushID == 'null' || pushID == '')){
+                if (device.platform == 'android' || device.platform == 'Android' )
+                {
+                    //pushNotification = window.plugins.pushNotification;
+                    //pushNotification.register(
+                            //successHandler,
+                            //errorHandler, {
+                                //"senderID":"239411080530",
+                                //"ecb":"onNotificationGCM"
+                            //});
+                }
+                else
+                {
+                    pushNotification = window.plugins.pushNotification;
+                    pushNotification.register(
+                            tokenHandler,
+                            errorHandler, {
+                                "badge":"true",
+                                "sound":"true",
+                                "alert":"true",
+                                "ecb":"onNotificationAPN"
+                            });
+                }
+            }
         //Verifica si ya se registró el usuario
         //var idUsuario = window.localStorage.getItem("idUsuario");
         //if (idUsuario != null && idUsuario != 'undefined')
            // window.location.replace("menu.html");
+		   }
 		   
     </script>
 </head>

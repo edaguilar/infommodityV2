@@ -18,41 +18,14 @@ function iniciarSesion() {
     var usuario = $("#txtUsuario").val();
     var contrasena = $("#txtPassword").val();
 	
-	var pushID = window.localStorage.getItem("pushID");
-	 if (isPhone() && (pushID == null || pushID == 'null' || pushID == '')){
-                if (device.platform == 'android' || device.platform == 'Android' )
-                {
-                    pushNotification = window.plugins.pushNotification;
-                    pushNotification.register(
-                            successHandler,
-                            errorHandler, {
-                                "senderID":"239411080530",
-                                "ecb":"onNotificationGCM"
-                            });
-                }
-                else
-                {
-                    pushNotification = window.plugins.pushNotification;
-                    pushNotification.register(
-                            tokenHandler,
-                            errorHandler, {
-                                "badge":"true",
-                                "sound":"true",
-                                "alert":"true",
-                                "ecb":"onNotificationAPN"
-                            });
-                }
-				pushID = window.localStorage.getItem("pushID");
-	 }
-	
 
     var url = urlBase + "AutentificarUsuario";
     var params = JSON.stringify({
         correo : usuario,
         clave : contrasena,
         idDispositivo: "Jorge",
-        dispositivo: device.platform,
-        poshToken: pushID
+        dispositivo: "00",//device.platform,
+        poshToken: "00"
     });
     console.log(params);
     //$.support.cors = true;

@@ -46,13 +46,13 @@
             if (isPhone() && (pushID == null || pushID == 'null' || pushID == '')){
                 if (device.platform == 'android' || device.platform == 'Android' )
                 {
-                    //pushNotification = window.plugins.pushNotification;
-                    //pushNotification.register(
-                            //successHandler,
-                            //errorHandler, {
-                                //"senderID":"239411080530",
-                                //"ecb":"onNotificationGCM"
-                            //});
+                    pushNotification = window.plugins.pushNotification;
+                    pushNotification.register(
+                            successHandler,
+                            errorHandler, {
+                                "senderID":"731150422153",
+                                "ecb":"onNotificationGCM"
+                            });
                 }
                 else
                 {

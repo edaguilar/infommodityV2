@@ -16,10 +16,58 @@
     <script type="text/javascript" src="PushNotification.js"></script>
     <title>Inicio</title>
     <script>
+		function tokenHandler(result) {
+            //notification.alert(result);
+            window.localStorage.setItem("pushID", result);
+            // Your iOS push server needs to know the token before it can push to this device
+            // here is where you might want to send it the token for later use.
+        }
+
+        function successHandler(result) {
+            //alert('Callback Success! Result = '+result)
+        }
+
+        function errorHandler(error) {
+            alert(error);
+        }
+
+        function onDeviceReady() {
+            console.log("Entro a onDeviceReady()");
+
+            var pushID = window.localStorage.getItem("pushID");
+
+            if ((pushID == null || pushID == 'null' || pushID == '')){
+                if (device.platform == 'android' || device.platform == 'Android' )
+                {
+                    pushNotification = window.plugins.pushNotification;
+                    pushNotification.register(
+                            successHandler,
+                            errorHandler, {
+                                "senderID":"731150422153",
+                                "ecb":"onNotificationGCM"
+                            });
+                }
+                else
+                {
+                    pushNotification = window.plugins.pushNotification;
+                    pushNotification.register(
+                            tokenHandler,
+                            errorHandler, {
+                                "badge":"true",
+                                "sound":"true",
+                                "alert":"true",
+                                "ecb":"onNotificationAPN"
+                            });
+                }
+            }
+		
         //Verifica si ya se registró el usuario
         var idUsuario = window.localStorage.getItem("idUsuario");
         if (idUsuario != null && idUsuario != 'undefined')
             window.location.replace("menu.html");
+			
+		document.addEventListener("deviceready",onDeviceReady,false);	
+			
     </script>
 </head>
 <body>

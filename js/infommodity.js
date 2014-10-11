@@ -1789,3 +1789,49 @@ function cargando() {
 function terminoCargando() {
     setTimeout($.unblockUI, 10)
 }
+//______________________________________________________________________
+
+// handle GCM notifications for Android
+function onNotificationGCM(e) {
+    switch( e.event )
+    {
+        case 'registered':
+            if ( e.regid.length > 0 )
+            {
+                console.log("Regid " + e.regid);
+                window.localStorage.setItem("pushID", e.regid);
+                //alert('registration id = '+e.regid);
+            }
+            break;
+
+        case 'message':
+            // this is the actual push notification. its format depends on the data model from the push server
+            alert('message = '+e.message+' msgcnt = '+e.msgcnt);
+            break;
+
+        case 'error':
+            alert('GCM error = '+e.msg);
+            break;
+
+        default:
+            alert('An unknown GCM event has occurred');
+            break;
+    }
+}
+// handle APNS notifications for iOS
+function onNotificationAPN(e) {
+    if (e.alert) {
+        navigator.notification.alert(e.alert);
+    }
+
+    if (e.sound) {
+        var snd = new Media(e.sound);
+        snd.play();
+    }
+
+    if (e.badge) {
+        pushNotification.setApplicationIconBadgeNumber(successHandler, e.badge);
+    }
+}
+//Push notifications
+var pushNotification;

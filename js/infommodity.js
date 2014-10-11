@@ -13,7 +13,7 @@ function iniciarSesion() {
 		_disp = device.platform;
 		_uuid = device.uuid;
 	}
-    console.log("Push: " + pushID);
+    alert("Push: " + pushID);
 	if((pushID == null) && (pushID == 'undefined')) {
 		pushID = "No Push";
 	}

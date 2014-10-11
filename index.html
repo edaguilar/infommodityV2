@@ -20,15 +20,17 @@
 		function init()
 		{		
             alert("INIT");
-            console.log("Entro a Init()");
+			if(isPhone()){
+				alert("is phone");
+				document.addEventListener("deviceready",onDeviceReady,false)
+			}
+			else{
+				alert("is not phone");
+				onDeviceReady()
+			}
 		}
 		
-		 if(isPhone()){
-            document.addEventListener("deviceready",onDeviceReady,false)
-        }
-        else{
-            onDeviceReady()
-        }
+		 
 		
 		function tokenHandler(result) {
             //notification.alert(result);

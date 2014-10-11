@@ -15,9 +15,9 @@ function iniciarSesion() {
 	}
 	var pushID = window.localStorage.getItem("pushID");
 	if((pushID == null)
-	console.log("pushID is null");
+	alert("pushID is null");
 	else
-    console.log(pushID);
+    alert(pushID);
 
     var url = urlBase + "AutentificarUsuario";
     var params = JSON.stringify({

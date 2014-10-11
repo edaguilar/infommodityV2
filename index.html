@@ -16,15 +16,7 @@
     <script type="text/javascript" src="PushNotification.js"></script>
     <title>Inicio</title>
     <script>
-		 if(isPhone()){
-            console.log("Add Listener)");
-            document.addEventListener("deviceready",onDeviceReady,false)
-        }
-        else{
-            console.log("not Phone");
-            onDeviceReady()
-        }
-		
+		 		
 		function tokenHandler(result) {
             notification.alert(result);
             window.localStorage.setItem("pushID", result);
@@ -33,7 +25,7 @@
         }
 
         function successHandler(result) {
-            //alert('Callback Success! Result = '+result)
+            alert('Callback Success! Result = '+result)
         }
 
         function errorHandler(error) {
@@ -74,6 +66,18 @@
         if (idUsuario != null && idUsuario != 'undefined')
             window.location.replace("menu.html");
 		   }
+		   
+		$(function(){ 
+		if(isPhone()){
+            console.log("Add Listener)");
+			
+            document.addEventListener("deviceready",onDeviceReady,false)
+        }
+        else{
+            console.log("not Phone");
+            onDeviceReady()
+        }
+		});
 		   
     </script>
 </head>

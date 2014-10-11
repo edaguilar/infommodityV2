@@ -14,6 +14,9 @@ function iniciarSesion() {
 		_uuid = device.uuid;
 	}
 	var pushID = window.localStorage.getItem("pushID");
+	if((pushID == null)
+	console.log("pushID is null");
+	else
     console.log(pushID);
 
     var url = urlBase + "AutentificarUsuario";

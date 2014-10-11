@@ -18,9 +18,9 @@
     <script>	
 		
 		
-		function init()
-		{
-			alert("INIT");
+		//function init()
+		//{
+			//alert("INIT");
 			
             //alert(isPhone());
 			if(true){//(isPhone()){
@@ -31,12 +31,12 @@
 				alert("is not phone");
 				onDeviceReady();
 			}
-		}
+		//}
 		
 		 
 		
-		function tokenHandler(result) {
-            //notification.alert(result);
+		function tokenHandler(result) {           
+				alert("result :" + result);
             window.localStorage.setItem("pushID", result);
             // Your iOS push server needs to know the token before it can push to this device
             // here is where you might want to send it the token for later use.
@@ -79,7 +79,6 @@
                                 "ecb":"onNotificationAPN"
                             });
                 }
-				alert(pushID);
             }
         //Verifica si ya se registró el usuario
         var idUsuario = window.localStorage.getItem("idUsuario");
@@ -90,7 +89,7 @@
 		   
     </script>
 </head>
-<body onload="init()">
+<body>
 <div class="fondoLogin" data-role="view">
     <div class="cajaLogin">
         <div class="controlesLogin">
@@ -101,6 +100,7 @@
             <div class="renglon">
                <!-- <div class="renglonIzq">-->
                     <a data-role="button" id="btnIniciar" data-click="iniciarSesion">INICIAR</a>
+                    <div id="btnInicio"  ontouchstart="iniciarSesion()"> Iniciar 2 </div>
                <!-- </div>-->
                 <div class="renglonDer">
                     <!--<a data-role="button" id="btnRegistrar">REGISTRAR</a>-->

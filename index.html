@@ -67,21 +67,22 @@
             window.location.replace("menu.html");
 		   }
 		   
-		$(function(){ 
-		if(isPhone()){
-            console.log("Add Listener)");
-			
-            document.addEventListener("deviceready",onDeviceReady,false)
-        }
-        else{
-            console.log("not Phone");
-            onDeviceReady()
-        }
-		});
+		function init()
+		{
+			if(isPhone()){
+				console.log("Add Listener)");
+				
+				document.addEventListener("deviceready",onDeviceReady,false)
+			}
+			else{
+				console.log("not Phone");
+				onDeviceReady()
+			}
+		}
 		   
     </script>
 </head>
-<body>
+<body onload="init()">
 <div class="fondoLogin" data-role="view">
     <div class="cajaLogin">
         <div class="controlesLogin">

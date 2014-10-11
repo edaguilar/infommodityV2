@@ -7,12 +7,13 @@ function iniciarSesion() {
     console.log("Inicio");
     var usuario = $("#txtUsuario").val();
     var contrasena = $("#txtPassword").val();
-	var disp = "No Disp";
-	var _uuid = "No";
+	var disp = "No Dispipositivo";
+	var _uuid = "No Disponible";
 	if (isPhone()) {
 		disp = device.platform;
 		_uuid = device.uuid;
 	}
+	var pushID = window.localStorage.getItem("pushID");
 
     var url = urlBase + "AutentificarUsuario";
     var params = JSON.stringify({
@@ -20,7 +21,7 @@ function iniciarSesion() {
         clave : contrasena,
         idDispositivo: _uuid,
         dispositivo: disp,
-        poshToken: "00"
+        poshToken: pushID
     });
     console.log(params);
     //$.support.cors = true;

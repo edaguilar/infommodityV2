@@ -3,7 +3,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "mx.com.softelligence.Infommodity"
         versionCode="1"
-        version   = "0.1.20">
+        version   = "1.0.01">
 
     <!-- versionCode is optional and Android only -->
     <name>Infommodity</name>
@@ -41,6 +41,15 @@
 
     <!-- Icons -->
     <icon src="icon.png" />
+    <icon src="imgs/iconos/android/36.png" gap:platform="android" gap:density="ldpi" />
+    <icon src="imgs/iconos/android/48.png" gap:platform="android" gap:density="mdpi" />
+    <icon src="imgs/iconos/android/96.png" gap:platform="android" gap:density="hdpi" />
+    <icon src="imgs/iconos/android/512.png" gap:platform="android" gap:density="xhdpi" />
+    <icon src="imgs/iconos/ios/57.png" gap:platform="ios" width="57" height="57" />
+    <icon src="imgs/iconos/ios/72.png" gap:platform="ios" width="72" height="72" />
+    <icon src="imgs/iconos/ios/114.png" gap:platform="ios" width="114" height="114" />
+    <icon src="imgs/iconos/ios/144.png" gap:platform="ios" width="144" height="144" />
+    <icon src="imgs/iconos/ios/120.png" gap:platform="ios" width="120" height="120" />
 
     <!-- Permisos -->
     <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />

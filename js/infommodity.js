@@ -5,6 +5,8 @@ var urlBase = 'http://app.infommodity.com/Infommodity.svc/';
 function iniciarSesion() {
 	
     alert("Inicio");
+}
+function other {
     var usuario = $("#txtUsuario").val();
 	alert(usuario);
     var contrasena = $("#txtPassword").val();
@@ -1868,6 +1870,7 @@ function isPhone() {
 }
 
 // handle GCM notifications for Android
+/*
 function onNotificationGCM(e) {
     switch( e.event )
     {
@@ -1909,4 +1912,4 @@ function onNotificationAPN(e) {
     if (e.badge) {
         pushNotification.setApplicationIconBadgeNumber(successHandler, e.badge);
     }
-}
+}*/

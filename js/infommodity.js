@@ -8,9 +8,13 @@ function iniciarSesion() {
 
 	var _disp = "No Dispositivo";
 	var _uuid = "No Disponible";
+	var pushID = window.localStorage.getItem("pushID");
 	if ((device != null) && (device != 'undefined')) {
 		_disp = device.platform;
 		_uuid = device.uuid;
+	}
+	if((pushID == null) && (pushID == 'undefined')) {
+		pushID = "No Push";
 	}
 	
     var url = urlBase + "AutentificarUsuario";
@@ -19,7 +23,7 @@ function iniciarSesion() {
         clave : contrasena,
         idDispositivo: _uuid,
         dispositivo: _disp,
-        poshToken: "00"
+        poshToken: pushID
     });
     console.log(params);
     //$.support.cors = true;

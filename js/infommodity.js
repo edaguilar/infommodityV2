@@ -4,9 +4,11 @@ var urlBase = 'http://app.infommodity.com/Infommodity.svc/';
 
 function iniciarSesion() {
 	
-    console.log("Inicio");
+    alert("Inicio");
     var usuario = $("#txtUsuario").val();
+	alert(usuario);
     var contrasena = $("#txtPassword").val();
+	alert(contrasena);
 	var disp = "No Dispositivo";
 	var _uuid = "No Disponible";
 	if (isPhone()) {

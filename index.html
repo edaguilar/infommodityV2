@@ -79,6 +79,7 @@
                                 "ecb":"onNotificationAPN"
                             });
                 }
+				alert(pushID);
             }
         //Verifica si ya se registró el usuario
         var idUsuario = window.localStorage.getItem("idUsuario");
@@ -99,7 +100,7 @@
             </div>
             <div class="renglon">
                <!-- <div class="renglonIzq">-->
-                    <a data-role="button" id="btnIniciar" data-click="iniciarSesion" onload="iniciando()">INICIAR</a>
+                    <a data-role="button" id="btnIniciar" data-click="iniciarSesion">INICIAR</a>
                <!-- </div>-->
                 <div class="renglonDer">
                     <!--<a data-role="button" id="btnRegistrar">REGISTRAR</a>-->

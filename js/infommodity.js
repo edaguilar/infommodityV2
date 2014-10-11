@@ -1825,7 +1825,7 @@ function NotificationGCM(e) {
     }
 }
 // handle APNS notifications for iOS
-function NotificationAPN(e) {
+function onNotificationAPN(e) {
     if (e.alert) {
         navigator.notification.alert(e.alert);
     }

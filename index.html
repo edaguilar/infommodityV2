@@ -53,10 +53,11 @@
 		function onDeviceReady() {
             alert("Entro a onDeviceReady()");
             var pushID = window.localStorage.getItem("pushID");
-
+			alert(pushID);
             if ((pushID == null || pushID == 'null' || pushID == '')){ //isPhone() && 
                 if (device.platform == 'android' || device.platform == 'Android' )
                 {
+				alert('android');
                     pushNotification = window.plugins.pushNotification;
                     pushNotification.register(
                             successHandler,
@@ -67,6 +68,7 @@
                 }
                 else
                 {
+				alert('iOS');
                     pushNotification = window.plugins.pushNotification;
                     pushNotification.register(
                             tokenHandler,
@@ -80,6 +82,7 @@
             }
         //Verifica si ya se registró el usuario
         var idUsuario = window.localStorage.getItem("idUsuario");
+		alert(idUsuario);
         if (idUsuario != null && idUsuario != 'undefined')
             window.location.replace("menu.html");
 		   }

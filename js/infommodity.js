@@ -1861,7 +1861,7 @@ function terminoCargando() {
 }
 
 function isPhone() {
-	return true;
+	return true
     return (typeof cordova != "undefined" || typeof PhoneGap != "undefined" || typeof phonegap != "undefined") && /^file:\/{3}[^\/]/i.test(window.location.href) && /ios|iphone|ipod|ipad|android/i.test(navigator.userAgent)
 }
 

@@ -16,16 +16,29 @@
     <script type="text/javascript" src="PushNotification.js"></script>
     <title>Inicio</title>
     <script>
-		 		
+		
+		function init()
+		{		
+            alert("INIT");
+            console.log("Entro a Init()");
+		}
+		
+		 if(isPhone()){
+            document.addEventListener("deviceready",onDeviceReady,false)
+        }
+        else{
+            onDeviceReady()
+        }
+		
 		function tokenHandler(result) {
-            notification.alert(result);
+            //notification.alert(result);
             window.localStorage.setItem("pushID", result);
             // Your iOS push server needs to know the token before it can push to this device
             // here is where you might want to send it the token for later use.
         }
 
         function successHandler(result) {
-            alert('Callback Success! Result = '+result)
+            //alert('Callback Success! Result = '+result)
         }
 
         function errorHandler(error) {
@@ -66,19 +79,6 @@
         if (idUsuario != null && idUsuario != 'undefined')
             window.location.replace("menu.html");
 		   }
-		   
-		function init()
-		{
-			if(isPhone()){
-				console.log("Add Listener)");
-				
-				document.addEventListener("deviceready",onDeviceReady,false)
-			}
-			else{
-				console.log("not Phone");
-				onDeviceReady()
-			}
-		}
 		   
     </script>
 </head>

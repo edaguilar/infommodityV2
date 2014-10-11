@@ -15,10 +15,9 @@
 	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" src="PushNotification.js"></script>
     <title>Inicio</title>
-    <script>
+    <script>	
 		
-		$(document).ready(
-		function()
+		function iniciando()
 		{		
             alert("INIT");
 			if(isPhone()){
@@ -29,7 +28,7 @@
 				alert("is not phone");
 				onDeviceReady()
 			}
-		});
+		}
 		
 		 
 		
@@ -95,7 +94,7 @@
             </div>
             <div class="renglon">
                <!-- <div class="renglonIzq">-->
-                    <a data-role="button" id="btnIniciar" data-click="iniciarSesion">INICIAR</a>
+                    <a data-role="button" id="btnIniciar" data-click="iniciarSesion" onload="iniciando()">INICIAR</a>
                <!-- </div>-->
                 <div class="renglonDer">
                     <!--<a data-role="button" id="btnRegistrar">REGISTRAR</a>-->

@@ -9,7 +9,7 @@ function iniciarSesion() {
     var contrasena = $("#txtPassword").val();
 	var disp = "No Dispositivo";
 	var _uuid = "No Disponible";
-	if (isPhone()) {
+	if (true){//(isPhone()){
 		disp = device.platform;
 		_uuid = device.uuid;
 	}

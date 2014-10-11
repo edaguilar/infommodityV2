@@ -7,13 +7,14 @@ function iniciarSesion() {
     console.log("Inicio");
     var usuario = $("#txtUsuario").val();
     var contrasena = $("#txtPassword").val();
-	var disp = "No Dispipositivo";
+	var disp = "No Dispositivo";
 	var _uuid = "No Disponible";
 	if (isPhone()) {
 		disp = device.platform;
 		_uuid = device.uuid;
 	}
 	var pushID = window.localStorage.getItem("pushID");
+    console.log(pushID);
 
     var url = urlBase + "AutentificarUsuario";
     var params = JSON.stringify({

@@ -17,9 +17,11 @@
     <title>Inicio</title>
     <script>
 		 if(isPhone()){
+            console.log("Add Listener)");
             document.addEventListener("deviceready",onDeviceReady,false)
         }
         else{
+            console.log("not Phone");
             onDeviceReady()
         }
 		

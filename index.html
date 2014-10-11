@@ -12,7 +12,6 @@
     <script src="js/kendo.all.min.js"></script>
     <script src="js/jquery.blockUI.js"></script>
     <script src="js/infommodity.js"></script>
-	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" src="PushNotification.js"></script>
     <title>Inicio</title>
     <script>
@@ -41,12 +40,13 @@
             if ((pushID == null || pushID == 'null' || pushID == '')){
                 if (device.platform == 'android' || device.platform == 'Android' )
                 {
+				alert("Android");
                     pushNotification = window.plugins.pushNotification;
                     pushNotification.register(
                             successHandler,
                             errorHandler, {
                                 "senderID":"731150422153",
-                                "ecb":"onNotificationGCM"
+                                "ecb":"app.onNotificationGCM"
                             });
                 }
                 else

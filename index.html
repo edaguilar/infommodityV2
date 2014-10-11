@@ -32,12 +32,9 @@
             alert(error);
         }
 		
-		function onNotificationGCM(e){
+		function NotificationGCM(e){
 			//alert("notif");
-			NotificationGCM(e);
-		}
-		function NotificationAPN(e) {
-			onNotificationAPN(e);
+			onNotificationGCM(e);
 		}
 
         function onDeviceReady() {
@@ -52,9 +49,9 @@
                     pushNotification = window.plugins.pushNotification;
                     pushNotification.register(
                             successHandler,
-                            errorHandler, {
-                                "senderID":"731150422153",
-                                "ecb":"onNotificationGCM"
+                            errorHandler, { //"senderID":"731150422153",
+                                "senderID":"239411080530",
+                                "ecb":"NotificationGCM"
                             });
                 }
                 else

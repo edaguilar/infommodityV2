@@ -3,33 +3,16 @@ var urlBase = 'http://app.infommodity.com/Infommodity.svc/';
 /* LOGIN */
 
 function iniciarSesion() {
-	
-    alert("Inicio");
-}
-function other {
     var usuario = $("#txtUsuario").val();
-	alert(usuario);
     var contrasena = $("#txtPassword").val();
-	alert(contrasena);
-	var disp = "No Dispositivo";
-	var _uuid = "No Disponible";
-	if (isPhone()) {
-		disp = device.platform;
-		_uuid = device.uuid;
-	}
-	var pushID = window.localStorage.getItem("pushID");
-	if((pushID == null)
-	alert("pushID is null");
-	else
-    alert(pushID);
 
     var url = urlBase + "AutentificarUsuario";
     var params = JSON.stringify({
         correo : usuario,
         clave : contrasena,
-        idDispositivo: _uuid,
-        dispositivo: disp,
-        poshToken: pushID
+        idDispositivo: "Jorge",
+        dispositivo: "HTML",
+        poshToken: "00"
     });
     console.log(params);
     //$.support.cors = true;
@@ -254,9 +237,8 @@ function seleccionarCommodity(){
 }
 
 function seleccionarCommodityBase(){
-
     var idVariable =  window.sessionStorage.getItem("idBasesCommodity");
-	
+
     $("#listview-commodity").find("div[class='renglonVariable']").each(function(index){
         var idActual = $(this).find("input[type='hidden']").val();
         var img = $(this).find("img");
@@ -477,22 +459,13 @@ function cargarVarTabla() {
             });
             window.sessionStorage.setItem("idTabla",0);
 
-			for(var i = 0; i < dataSource._total; i++){
-				dataSource.data()[i].v1 = addCommas(dataSource.data()[i].v1);
-				dataSource.data()[i].v2 = addCommas(dataSource.data()[i].v2);
-				dataSource.data()[i].v3 = addCommas(dataSource.data()[i].v3);
-				dataSource.data()[i].v4 = addCommas(dataSource.data()[i].v4);
-				dataSource.data()[i].v5 = addCommas(dataSource.data()[i].v5);
-				dataSource.data()[i].v6 = addCommas(dataSource.data()[i].v6);
-			}
-			
             //Recorre todos para ver cuantos renglones
             dataSource.fetch();
             var dataSourceData = dataSource.data();
 
             for (var i = 0; i < dataSourceData.length; i++){
-                var dataItem = dataSourceData[i];				
-					
+                var dataItem = dataSourceData[i];
+
                 //Si es de dos renglones
                 if (dataItem.h5.length == 0){
                     var renglonTabla = $("#renglonTabla_" + i);
@@ -520,18 +493,7 @@ function cargarVarTabla() {
     cambiarEstiloHeaderParaTabla(true);
     cambiarColorFondoTabs();
 }
-function addCommas(nStr)
-{
-	nStr += '';
-	x = nStr.split('.');
-	x1 = x[0];
-	x2 = x.length > 1 ? '.' + x[1] : '';
-	var rgx = /(\d+)(\d{3})/;
-	while (rgx.test(x1)) {
-		x1 = x1.replace(rgx, '$1' + ',' + '$2');
-	}
-	return x1 + x2;
-}
+
 function cambiarEstiloHeaderParaTabla(agregar){
     var titulo = $("span[data-role='view-title']");
     if (agregar){
@@ -611,7 +573,7 @@ var variablesUnidadActivo = true;
 function graficar() {
     cargando();
     var container = $("#container");
-	
+
     var idCommodity = window.sessionStorage.getItem("idCommodity");
     var variable = window.sessionStorage.getItem("variable");
     var idVariable = window.sessionStorage.getItem("idVariable");
@@ -652,10 +614,7 @@ function graficar() {
             var numeroDeValores = 0;
             var ordenSerie = 20;
             $.each(resultado,function(i,obj){
-				if(obj.encabezado.search(' AM') > 0 || obj.encabezado.search(' PM') > 0)
-                var encabezado = obj.encabezado.substring(0,obj.encabezado.indexOf(' '))
-				else
-				var encabezado = obj.encabezado;
+                var encabezado = obj.encabezado;
                 var serie = obj.serie;
                 var valor = obj.valor;
 
@@ -693,21 +652,16 @@ function graficar() {
                 container.css("height",altoDeLaGrafica);
                 altoAux = altoDeLaGrafica;
             }
-			
-			container.css("margin-top", "0");
-			container.css("margin-bottom", "0");
-			container.css("margin-left", "auto");
-			container.css("margin-right", "auto");
             //container.css("width",ancho);
 
-            var titulo = "";
+            var titulo = renglonVariable;
 
             $(function () {
                 $('#container').highcharts({/**/
                 chart: {
                     type: 'line',
                     inverted: true,
-                    spacingRight: 10		
+                    spacingRight: 25
                 },
                     title: {
                         text: ' ',
@@ -717,14 +671,10 @@ function graficar() {
                         align:'top',
                         verticalAlign:'top',
                         margin:20,
-                        x: 50,
+                        x: 60,
                         reversed: true,
-                        width:270,
-						itemStyle: {
-							fontSize: '8px'
-						}
+                        width:270
                     },
-
                     xAxis: {
                         categories: categorias,
                         labels: {
@@ -740,11 +690,6 @@ function graficar() {
                             text: titulo
                         },
                         labels: {
-							rotation: 90,
-                            align: 'right',
-                            style: {
-                                fontSize: '8px'
-                            },
                             formatter: function () {
                                 return Highcharts.numberFormat(this.value, 0, '.', ',')
                             }
@@ -767,11 +712,8 @@ function graficar() {
                         series
 
                 });
-				
-				//var legenda = document.children[0].children[1].children[0].children[1].children[1].children[0].children[0].children[0].children[9];
-				//legenda.setAttribute("transform", "translate(".concat(($(window).height()-260).toString()).concat(",10),rotate(90)"));							
             });
-			
+
             terminoCargando();
         },
         error: function (e) {
@@ -1006,16 +948,13 @@ function obtenerTipoBase() {
             var dataSource = new kendo.data.DataSource({
                 data: resultado
             });
-			console.log(resultado);
+
             $("#listview-base").kendoMobileListView({
                 dataSource: dataSource,
                 template: $("#listview-template-tipo").text(),
                 click: function(e) {
-				console.log(e);
-                    if(e.dataItem != undefined){
                     window.sessionStorage.setItem("idTipoBase", e.dataItem.idTipo);
                     window.sessionStorage.setItem("tipoBase", e.dataItem.tipo);
-					}
                     seleccionarTipoBase();
                 }
             });
@@ -1112,7 +1051,7 @@ function cargarBasesTipo(){
         obtenerBasesCommodity();
     }
 
-    obtenerTipoBase();
+    //obtenerTipoBase();
     cambiarColorFondoTabs();
 }
 
@@ -1313,34 +1252,16 @@ function obtenerGraficaBases(){
                     legend: {
                         align:'top',
                         verticalAlign:'right',
-                        margin:10,
-                        x: 30,
-						width:270,
-						itemStyle: {
-							fontSize: '8px'
-						}
+                        margin:20,
+                        x: 60
                     },
                     xAxis: {
                         type: 'datetime',
-						labels: {
-                            rotation: +45,
-                            align: 'right',
-                            style: {
-                                fontSize: '8px'
-                            }
-                        },
                         dateTimeLabelFormats: { // don't display the dummy year
                             month: '%b'
                         },tickInterval: 30 * 24 * 3600 * 1000
                     },
                     yAxis: {
-						labels: {
-                            rotation: 90,
-                            align: 'right',
-                            style: {
-                                fontSize: '8px'
-                            }
-                        },
                         title: {
                             text: titulo
                         }
@@ -1356,8 +1277,6 @@ function obtenerGraficaBases(){
                         series
 
                 });
-				//var legenda = document.children[0].children[1].children[0].children[1].children[1].children[0].children[0].children[0].children[9];
-				//legenda.setAttribute("transform", "translate(".concat(($(window).height()-260).toString()).concat(",10),rotate(90)"));							
             });
 
             terminoCargando();
@@ -1863,53 +1782,3 @@ function cargando() {
 function terminoCargando() {
     setTimeout($.unblockUI, 10)
 }
-
-function isPhone() {
-	return true
-    //return (typeof cordova != "undefined" || typeof PhoneGap != "undefined" || typeof phonegap != "undefined") && /^file:\/{3}[^\/]/i.test(window.location.href) && /ios|iphone|ipod|ipad|android/i.test(navigator.userAgent)
-}
-
-// handle GCM notifications for Android
-/*
-function onNotificationGCM(e) {
-    switch( e.event )
-    {
-        case 'registered':
-            if ( e.regid.length > 0 )
-            {
-                console.log("Regid " + e.regid);
-                window.localStorage.setItem("pushID", e.regid);
-                //alert('registration id = '+e.regid);
-            }
-            break;
-
-        case 'message':
-            // this is the actual push notification. its format depends on the data model from the push server
-            alert('message = '+e.message+' msgcnt = '+e.msgcnt);
-            break;
-
-        case 'error':
-            alert('GCM error = '+e.msg);
-            break;
-
-        default:
-            alert('An unknown GCM event has occurred');
-            break;
-    }
-}
-
-// handle APNS notifications for iOS
-function onNotificationAPN(e) {
-    if (e.alert) {
-        navigator.notification.alert(e.alert);
-    }
-
-    if (e.sound) {
-        var snd = new Media(e.sound);
-        snd.play();
-    }
-
-    if (e.badge) {
-        pushNotification.setApplicationIconBadgeNumber(successHandler, e.badge);
-    }
-}*/

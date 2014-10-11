@@ -17,18 +17,19 @@
     <title>Inicio</title>
     <script>	
 		
-		window.onload = function()
-		{		
-            alert("INIT");
+		
+		function init()
+		{
+			alert("INIT");
 			
-            //alert(isPhone());
+            alert(isPhone());
 			if(true){//(isPhone()){
 				alert("is phone");
-				document.addEventListener("deviceready",onDeviceReady,false)
+				document.addEventListener("deviceready",onDeviceReady,true);
 			}
 			else{
 				alert("is not phone");
-				onDeviceReady()
+				onDeviceReady();
 			}
 		}
 		
@@ -50,7 +51,7 @@
         }
 		
 		function onDeviceReady() {
-            console.log("Entro a onDeviceReady()");
+            alert("Entro a onDeviceReady()");
 
             var pushID = window.localStorage.getItem("pushID");
 
@@ -86,7 +87,7 @@
 		   
     </script>
 </head>
-<body>
+<body onload="init()">
 <div class="fondoLogin" data-role="view">
     <div class="cajaLogin">
         <div class="controlesLogin">

@@ -13,8 +13,8 @@ function iniciarSesion() {
 		_disp = device.platform;
 		_uuid = device.uuid;
 	}
-    alert("Push: " + pushID);
-	if((pushID == null) && (pushID == 'undefined')) {
+    //alert("Push: " + pushID);
+	if((pushID == null) || (pushID == 'undefined')) {
 		pushID = "No Push";
 	}
 	

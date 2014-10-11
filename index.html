@@ -25,7 +25,7 @@
 
         function successHandler(result) {
             //alert('Callback Success! Result = '+result)
-			window.localStorage.setItem("pushID", result);
+			//window.localStorage.setItem("pushID", result);
         }
 
         function errorHandler(error) {
@@ -67,8 +67,8 @@
         if (idUsuario != null && idUsuario != 'undefined')
             window.location.replace("menu.html");
 			
-			
-		document.addEventListener("deviceready",onDeviceReady,false)	
+		//window.onload = 	
+		document.addEventListener("deviceready",onDeviceReady,false);	
 			
     </script>
 </head>

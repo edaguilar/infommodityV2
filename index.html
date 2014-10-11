@@ -31,6 +31,11 @@
         function errorHandler(error) {
             alert(error);
         }
+		
+		function onNotificationGCM(e){
+		alert("notif");
+			NotificationGCM(e);
+		}
 
         function onDeviceReady() {
             alert("Entro a onDeviceReady()");
@@ -46,7 +51,7 @@
                             successHandler,
                             errorHandler, {
                                 "senderID":"731150422153",
-                                "ecb":"app.onNotificationGCM"
+                                "ecb":"onNotificationGCM"
                             });
                 }
                 else

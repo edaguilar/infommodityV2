@@ -1797,7 +1797,7 @@ function terminoCargando() {
 //______________________________________________________________________
 
 // handle GCM notifications for Android
-function onNotificationGCM(e) {
+function NotificationGCM(e) {
 	alert("onNotificationGCM");
     switch( e.event )
     {

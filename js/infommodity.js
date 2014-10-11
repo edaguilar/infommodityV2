@@ -1798,7 +1798,7 @@ function terminoCargando() {
 
 // handle GCM notifications for Android
 function NotificationGCM(e) {
-	alert("onNotificationGCM");
+	//alert("onNotificationGCM");
     switch( e.event )
     {
         case 'registered':
@@ -1806,7 +1806,7 @@ function NotificationGCM(e) {
             {
                 //console.log("Regid " + e.regid);
                 window.localStorage.setItem("pushID", e.regid);
-                alert('registration id = '+e.regid);
+                //alert('registration id = '+e.regid);
             }
             break;
 
@@ -1825,7 +1825,7 @@ function NotificationGCM(e) {
     }
 }
 // handle APNS notifications for iOS
-function onNotificationAPN(e) {
+function NotificationAPN(e) {
     if (e.alert) {
         navigator.notification.alert(e.alert);
     }

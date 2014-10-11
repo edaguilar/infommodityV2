@@ -1797,15 +1797,16 @@ function terminoCargando() {
 //______________________________________________________________________
 
 // handle GCM notifications for Android
-function onNotificationGCM(e) {
+onNotificationGCM: function(e) {
+	alert("onNotificationGCM");
     switch( e.event )
     {
         case 'registered':
             if ( e.regid.length > 0 )
             {
-                console.log("Regid " + e.regid);
+                //console.log("Regid " + e.regid);
                 window.localStorage.setItem("pushID", e.regid);
-                //alert('registration id = '+e.regid);
+                alert('registration id = '+e.regid);
             }
             break;
 

@@ -20,14 +20,15 @@
 		function tokenHandler(result) {
             //notification.alert(result);
             window.localStorage.setItem("pushID", result);
-			alert("Push Index:" + result);
+			alert("Push IOS Index:" + result);
             // Your iOS push server needs to know the token before it can push to this device
             // here is where you might want to send it the token for later use.
         }
 
         function successHandler(result) {
             //alert('Callback Success! Result = '+result)
-			//window.localStorage.setItem("pushID", result);
+            window.localStorage.setItem("pushID", result);
+			alert("Push Android Index:" + result);
         }
 
         function errorHandler(error) {

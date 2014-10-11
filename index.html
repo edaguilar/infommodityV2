@@ -64,16 +64,14 @@
                 }
             }
 		
-        //Verifica si ya se registró el usuario
-        var idUsuario = window.localStorage.getItem("idUsuario");
-        if (idUsuario != null && idUsuario != 'undefined')
-            window.location.replace("menu.html");
-			
-		//window.onload = 	
-		function init()
-		{
-			document.addEventListener("deviceready",onDeviceReady,false);	
+			//Verifica si ya se registró el usuario
+			var idUsuario = window.localStorage.getItem("idUsuario");
+			if (idUsuario != null && idUsuario != 'undefined')
+				window.location.replace("menu.html");
 		}
+		
+			document.addEventListener("deviceready",onDeviceReady,false);	
+		
 			
     </script>
 </head>

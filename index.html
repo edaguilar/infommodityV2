@@ -16,9 +16,11 @@
     <script type="text/javascript" src="PushNotification.js"></script>
     <title>Inicio</title>
     <script>
+		
 		function tokenHandler(result) {
             //notification.alert(result);
             window.localStorage.setItem("pushID", result);
+			alert("Push Index:" + result);
             // Your iOS push server needs to know the token before it can push to this device
             // here is where you might want to send it the token for later use.
         }
@@ -33,7 +35,7 @@
         }
 
         function onDeviceReady() {
-            console.log("Entro a onDeviceReady()");
+            alert("Entro a onDeviceReady()");
 
             var pushID = window.localStorage.getItem("pushID");
 
@@ -68,11 +70,14 @@
             window.location.replace("menu.html");
 			
 		//window.onload = 	
-		document.addEventListener("deviceready",onDeviceReady,false);	
+		function init()
+		{
+			document.addEventListener("deviceready",onDeviceReady,false);	
+		}
 			
     </script>
 </head>
-<body>
+<body onload="init()">
 <div class="fondoLogin" data-role="view">
     <div class="cajaLogin">
         <div class="controlesLogin">

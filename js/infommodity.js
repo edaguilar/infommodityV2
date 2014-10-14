@@ -471,6 +471,14 @@ function cargarVarTabla() {
             });
             window.sessionStorage.setItem("idTabla",0);
 
+			for(var i = 0; i < dataSource._total; i++){
+				dataSource.data()[i].v1 = addCommas(dataSource.data()[i].v1);
+				dataSource.data()[i].v2 = addCommas(dataSource.data()[i].v2);
+				dataSource.data()[i].v3 = addCommas(dataSource.data()[i].v3);
+				dataSource.data()[i].v4 = addCommas(dataSource.data()[i].v4);
+				dataSource.data()[i].v5 = addCommas(dataSource.data()[i].v5);
+				dataSource.data()[i].v6 = addCommas(dataSource.data()[i].v6);
+			}
             //Recorre todos para ver cuantos renglones
             dataSource.fetch();
             var dataSourceData = dataSource.data();
@@ -504,6 +512,18 @@ function cargarVarTabla() {
 
     cambiarEstiloHeaderParaTabla(true);
     cambiarColorFondoTabs();
+}
+function addCommas(nStr)
+{
+	nStr += '';
+	x = nStr.split('.');
+	x1 = x[0];
+	x2 = x.length > 1 ? '.' + x[1] : '';
+	var rgx = /(\d+)(\d{3})/;
+	while (rgx.test(x1)) {
+		x1 = x1.replace(rgx, '$1' + ',' + '$2');
+	}
+	return x1 + x2;
 }
 
 function cambiarEstiloHeaderParaTabla(agregar){
@@ -626,6 +646,9 @@ function graficar() {
             var numeroDeValores = 0;
             var ordenSerie = 20;
             $.each(resultado,function(i,obj){
+				if(obj.encabezado.search(' AM') > 0 || obj.encabezado.search(' PM') > 0)
+                var encabezado = obj.encabezado.substring(0,obj.encabezado.indexOf(' '))
+				else
                 var encabezado = obj.encabezado;
                 var serie = obj.serie;
                 var valor = obj.valor;
@@ -664,9 +687,13 @@ function graficar() {
                 container.css("height",altoDeLaGrafica);
                 altoAux = altoDeLaGrafica;
             }
+			container.css("margin-top", "0");
+			container.css("margin-bottom", "0");
+			container.css("margin-left", "auto");
+			container.css("margin-right", "auto");
             //container.css("width",ancho);
 
-            var titulo = renglonVariable;
+            var titulo = "";//renglonVariable;
 
             $(function () {
                 $('#container').highcharts({/**/
@@ -977,8 +1004,11 @@ function obtenerTipoBase() {
                 dataSource: dataSource,
                 template: $("#listview-template-tipo").text(),
                 click: function(e) {
+				console.log(e);
+                    if(e.dataItem != undefined){
                     window.sessionStorage.setItem("idTipoBase", e.dataItem.idTipo);
                     window.sessionStorage.setItem("tipoBase", e.dataItem.tipo);
+					}
                     seleccionarTipoBase();
                 }
             });

@@ -673,7 +673,7 @@ function graficar() {
                 chart: {
                     type: 'line',
                     inverted: true,
-                    spacingRight: 25
+                    spacingRight: 10		
                 },
                     title: {
                         text: ' ',
@@ -683,10 +683,14 @@ function graficar() {
                         align:'top',
                         verticalAlign:'top',
                         margin:20,
-                        x: 60,
+                        x: 50,
                         reversed: true,
-                        width:270
+                        width:270,
+						itemStyle: {
+							fontSize: '8px'
+						}
                     },
+
                     xAxis: {
                         categories: categorias,
                         labels: {
@@ -702,6 +706,11 @@ function graficar() {
                             text: titulo
                         },
                         labels: {
+							rotation: 90,
+                            align: 'right',
+                            style: {
+                                fontSize: '8px'
+                            },
                             formatter: function () {
                                 return Highcharts.numberFormat(this.value, 0, '.', ',')
                             }
@@ -724,6 +733,9 @@ function graficar() {
                         series
 
                 });
+				
+				//var legenda = document.children[0].children[1].children[0].children[1].children[1].children[0].children[0].children[0].children[9];
+				//legenda.setAttribute("transform", "translate(".concat(($(window).height()-260).toString()).concat(",10),rotate(90)"));							
             });
 
             terminoCargando();
@@ -1264,16 +1276,34 @@ function obtenerGraficaBases(){
                     legend: {
                         align:'top',
                         verticalAlign:'right',
-                        margin:20,
-                        x: 60
+                        margin:10,
+                        x: 30,
+						width:270,
+						itemStyle: {
+							fontSize: '8px'
+						}
                     },
                     xAxis: {
                         type: 'datetime',
+						labels: {
+                            rotation: +45,
+                            align: 'right',
+                            style: {
+                                fontSize: '8px'
+                            }
+                        },
                         dateTimeLabelFormats: { // don't display the dummy year
                             month: '%b'
                         },tickInterval: 30 * 24 * 3600 * 1000
                     },
                     yAxis: {
+						labels: {
+                            rotation: 90,
+                            align: 'right',
+                            style: {
+                                fontSize: '8px'
+                            }
+                        },
                         title: {
                             text: titulo
                         }
@@ -1289,6 +1319,8 @@ function obtenerGraficaBases(){
                         series
 
                 });
+				//var legenda = document.children[0].children[1].children[0].children[1].children[1].children[0].children[0].children[0].children[9];
+				//legenda.setAttribute("transform", "translate(".concat(($(window).height()-260).toString()).concat(",10),rotate(90)"));							
             });
 
             terminoCargando();

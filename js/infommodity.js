@@ -15,7 +15,7 @@ function iniciarSesion() {
 	}
     //alert("Push: " + pushID);
 	if((pushID == null) || (pushID == 'undefined')) {
-		pushID = "No Push";
+		pushID = "00";
 	}
 	
     var url = urlBase + "AutentificarUsuario";

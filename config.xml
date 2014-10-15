@@ -3,7 +3,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "mx.com.softelligence.Infommodity"
         versionCode="1"
-        version   = "1.0.02">
+        version   = "1.0.03">
 
     <!-- versionCode is optional and Android only -->
     <name>Infommodity</name>

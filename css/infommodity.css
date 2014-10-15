@@ -9,16 +9,16 @@ body {
 	
 }
 .fondoLogin {
-    background: url('../imgs/login/fnd_login.jpg') no-repeat top center !important;
-    background-size:100%;
+    background: url('../imgs/login/fnd_login.jpg') top center !important;
+    /*background-size:100%;*/
 	position:absolute;top:0;bottom:0;left:0;right:0;
 	height:100%;
 }
 
 .cajaLogin {
     background: url('../imgs/login/fnd_datos_login.png') no-repeat top center;
-    background-size:100%;
-    height:215px;
+    /*background-size:100%;*/
+    height:230px;
     width: 100%;
     margin-top:100px;
     display:table;
@@ -28,7 +28,8 @@ body {
     display:table-cell;
     vertical-align: middle;
     text-align: center;
-    padding-top: 25px;
+    /*padding-top: 55px;*/
+	vertical-align: bottom;
 }
 
 .controlesLogin input { width: 80%; padding:7px !important; border-radius:8px; }

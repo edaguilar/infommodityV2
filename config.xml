@@ -34,7 +34,7 @@
     <preference name="android-installLocation" value="auto" />
     <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />
     <preference name="splash-screen-duration" value="1000"/>
-    <preference name="KeyboardShrinksView" value="true" />
+    <!-- <preference name="KeyboardShrinksView" value="true" />-->
 
     <!-- Splash 
     <gap:splash src="splash.png" />-->

@@ -32,9 +32,9 @@
     <preference name="android-maxSdkVersion" value="19" />
     <preference name="android-targetSdkVersion" value="14" />
     <preference name="android-installLocation" value="auto" />
-    <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />
+    <preference name="android-windowSoftInputMode" value="stateUnspecified|adjustResize" />
     <preference name="splash-screen-duration" value="1000"/>
-    <!-- <preference name="KeyboardShrinksView" value="true" />-->
+    <preference name="KeyboardShrinksView" value="false" />
 
     <!-- Splash 
     <gap:splash src="splash.png" />-->

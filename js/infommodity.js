@@ -81,6 +81,7 @@ function validaUsuario(){
 			if(!esValido)
 			{
 				window.sessionStorage.removeItem("idUsuario");
+				window.localStorage.removeItem("idUsuario");
 				window.location.replace("index.html");
 			}
         },

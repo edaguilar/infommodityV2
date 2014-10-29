@@ -85,7 +85,7 @@ function validaUsuario(){
 			return esValido;
         },
         error: function (e) {
-            //console.log(e);
+            alert(e);
 			return false;
         }
     });

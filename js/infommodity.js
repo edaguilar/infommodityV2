@@ -57,6 +57,7 @@ function iniciarSesion() {
 function validaUsuario(){
 	var idUsuario = window.localStorage.getItem("idUsuario");
     var url = urlBase + "ValidarUsuario";
+	var esValido = false;
 	
     var params = JSON.stringify({
         idClienteMovil : idUsuario
@@ -76,21 +77,21 @@ function validaUsuario(){
             var t = JSON.parse(JSON.stringify(e));
             var resultado = JSON.parse(t.ValidarUsuarioResult);
 			//console.log(resultado.mensaje);
-			var esValido = resultado.esValido;
+			esValido = resultado.esValido;
 			alert(esValido);
 			if(!esValido)
 			{
 				window.sessionStorage.removeItem("idUsuario");
 				//window.location.replace("index.html");
 			}
-			return esValido;
         },
         error: function (e) {
             alert(e);
-			return false;
+			esValido = false;
         }
     });
 
+			return esValido;
 
 }
 

@@ -77,6 +77,7 @@ function validaUsuario(){
             var resultado = JSON.parse(t.ValidarUsuarioResult);
 			//console.log(resultado.mensaje);
 			var esValido = resultado.esValido;
+			alert(esValido);
 			if(!esValido)
 			{
 				window.sessionStorage.removeItem("idUsuario");

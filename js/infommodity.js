@@ -54,6 +54,44 @@ function iniciarSesion() {
 
 
 }
+function validaUsuario(){
+	var idUsuario = window.localStorage.getItem("idUsuario");
+    var url = urlBase + "ValidarUsuario";
+	
+    var params = JSON.stringify({
+        idClienteMovil : idUsuario
+    });
+    //console.log(params);
+	
+    //$.support.cors = true;
+    $.ajax({
+        url: url,
+        crossDomain: true,
+        type: "POST",
+        dataType: "json",
+        contentType: "application/json; charset=uft-8",
+        data: params,		
+        success: function (e) {
+            //console.log(e);
+            var t = JSON.parse(JSON.stringify(e));
+            var resultado = JSON.parse(t.ValidarUsuarioResult);
+			//console.log(resultado.mensaje);
+			var esValido = resultado.esValido;
+			if(!esValido)
+			{
+				window.sessionStorage.removeItem("idUsuario");
+				//window.location.replace("index.html");
+			}
+			return esValido;
+        },
+        error: function (e) {
+            //console.log(e);
+			return false;
+        }
+    });
+
+
+}
 
 /* END LOGIN */
 

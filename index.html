@@ -71,14 +71,7 @@
 			//Verifica si ya se registró el usuario
 			var idUsuario = window.localStorage.getItem("idUsuario");
 			if (idUsuario != null && idUsuario != 'undefined')
-			{
-			var _esValido = validaUsuario();
-				//alert(_esValido);
-				if(_esValido)
-				{
-					window.location.replace("menu.html");
-				}
-			}
+				window.location.replace("menu.html");
 		}
 		
 			document.addEventListener("deviceready",onDeviceReady,false);	

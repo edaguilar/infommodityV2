@@ -11,15 +11,8 @@
     <script src="js/jquery.blockUI.js"></script>
     <script src="js/infommodity.js"></script>
     <title>Menu</title>
-	<script>
-		function validaSesion()
-		{
-			if(!validaUsuario())
-				window.location.replace("index.html");
-		}
-	</script>
 </head>
-<body onload="validaSesion()">
+<body onload="validaUsuario()">
 
     <div id="view" data-role="view" data-show="cargarMenuPrincipal">
         <div class="header" data-role="header">

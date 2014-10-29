@@ -81,7 +81,7 @@ function validaUsuario(){
 			if(!esValido)
 			{
 				window.sessionStorage.removeItem("idUsuario");
-				//window.location.replace("index.html");
+				window.location.replace("index.html");
 			}
         },
         error: function (e) {
@@ -90,8 +90,8 @@ function validaUsuario(){
         }
     });
 
-			alert(esValido);
-			return esValido;
+			//alert(esValido);
+			//return esValido;
 
 }
 

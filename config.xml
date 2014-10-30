@@ -36,9 +36,8 @@
     <preference name="splash-screen-duration" value="1000"/>
     <preference name="KeyboardShrinksView" value="false" />
 
-    <!-- Splash 
-    <gap:splash src="splash.png" />-->
-	<gap:splash src="splash.png" gap:platform="ios" width="320" height="480" />
+    <!-- Splash -->
+    <gap:splash src="splash.png" />
 
     <!-- Icons -->
     <icon src="icon.png" />

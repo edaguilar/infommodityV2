@@ -38,6 +38,7 @@
 
     <!-- Splash 
     <gap:splash src="splash.png" />-->
+	<gap:splash src="splash.png" gap:platform="ios" width="320" height="480" />
 
     <!-- Icons -->
     <icon src="icon.png" />

@@ -212,7 +212,7 @@ function cargarDescargar() {
 
 /* VARIABLES */
 
-function cargarVarCommodity() {
+function cargarVarCommodity(e) {
     variablesCommodityActivo = true;
     variablesVariablesActivo = false;
     variablesAnalisisActivo = false;
@@ -223,6 +223,7 @@ function cargarVarCommodity() {
     }
     cambiarColorFondoTabs();
     cambiarEstiloHeaderParaTabla(false);
+	e.view.scroller.reset(); 
 }
 
 function obtenerCommodities() {
@@ -383,7 +384,7 @@ function cargarValoresDeVariables(idCommodity){
     });
 }
 
-function cargarVarVariables() {
+function cargarVarVariables(e) {
     variablesCommodityActivo = false;
     variablesVariablesActivo = true;
     variablesAnalisisActivo = false;
@@ -395,6 +396,7 @@ function cargarVarVariables() {
     if (!yaCargoCommodity){
         obtenerCommodities();
     }
+	e.view.scroller.reset(); 
 }
 
 function seleccionarVariable(){
@@ -410,7 +412,7 @@ function seleccionarVariable(){
     });
 }
 
-function cargarVarAnalisis() {
+function cargarVarAnalisis(e) {
     cargando();
     variablesCommodityActivo = false;
     variablesVariablesActivo = false;
@@ -468,10 +470,11 @@ function cargarVarAnalisis() {
 
 
     cambiarEstiloHeaderParaTabla(false);
-    cambiarColorFondoTabs();
+    cambiarColorFondoTabs();	
+	e.view.scroller.reset(); 
 }
 
-function cargarVarTabla() {
+function cargarVarTabla(e) {
     cargando();
     variablesCommodityActivo = false;
     variablesVariablesActivo = false;
@@ -553,6 +556,7 @@ function cargarVarTabla() {
 
     cambiarEstiloHeaderParaTabla(true);
     cambiarColorFondoTabs();
+	e.view.scroller.reset(); 
 }
 function addCommas(nStr)
 {
@@ -1413,7 +1417,7 @@ function seleccionarTodasLasNotificaciones(){
 
 /* END BASES */
 var arbolDeNotificaciones;
-function cargarNotificaciones(){
+function cargarNotificaciones(e){
     var url = urlBase + "ObtenArbolNotificaciones";
 
     if (!yaCargo1erNivel) {
@@ -1473,6 +1477,8 @@ function cargarNotificaciones(){
             }
         });
     }
+	
+	e.view.scroller.reset(); 
 }
 
 function cargarSegundoNivel(datos,nombre){

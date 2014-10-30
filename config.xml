@@ -39,7 +39,15 @@
     <preference name="KeyboardShrinksView" value="false" />
 
     <!-- Splash -->
-    <gap:splash src="splash.png" gap:platform="ios"/>
+    <gap:splash gap:platform="android" src="imgs/screens/android/ldpi.png" gap:density="ldpi" />
+	<gap:splash gap:platform="android" src="imgs/screens/android/mdpi.png" gap:density="mdpi" />
+	<gap:splash gap:platform="android" src="imgs/screens/android/hdpi.png" gap:density="hdpi" />
+	<gap:splash gap:platform="android" src="imgs/screens/android/xhdpi.png" gap:density="xhdpi" />
+	<gap:splash gap:platform="ios" src="imgs/screens/ios/iphone-mini.png" width="320" height="480" />
+	<gap:splash gap:platform="ios" src="imgs/screens/ios/iphone.png" width="640" height="960" />
+	<gap:splash gap:platform="ios" src="imgs/screens/ios/ipad.png" width="768" height="1004" />
+	<gap:splash gap:platform="ios" src="imgs/screens/ios/ipad-retina.png" width="1536" height="2008" />
+	<gap:splash gap:platform="ios" src="imgs/screens/ios/iphone-retina.png" width="640" height="1136" />
 
     <!-- Icons -->
     <icon src="icon.png" />

@@ -38,6 +38,7 @@
 		}
 
         function onDeviceReady() {
+			navigator.splashscreen.hide();
             //alert("Entro a onDeviceReady()");
 
             var pushID = window.localStorage.getItem("pushID");

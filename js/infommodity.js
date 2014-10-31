@@ -159,7 +159,8 @@ function cargarDocumentos(){
                     template: $("#listview-template").text(),
                     click: function(e) {
                         //window.location = "descargar.html?url=" + encodeURI(e.dataItem.ruta);
-                        window.open(e.dataItem.ruta);
+                        //window.open(e.dataItem.ruta);
+						window.location = "viewdoc.html?url=" + encodeURI(e.dataItem.ruta);
                     }
                 });
             }
@@ -195,11 +196,18 @@ function cargarDocumentos(){
 
 }
 
-function cargarPDF(){ //data-show="cargarPDF"
-	var iframe = $("#pdf-canvas");
-	var urlPdf = window.location.search.substring(1).replace("url=","");
-
-   iframe.attr("data",urlPdf);
+function cargardocpdf(){ //data-show="cargarPDF"
+	//var pdfholder = $("#pdf-canvas");
+	var urlPdf = window.location.search.substring(1).replace("url=","").replace(" ","%20");
+	var datapdf ="https://docs.google.com/viewer?url=" + urlPdf +"&embedded=true"
+	
+	var x = document.getElementById("pdf-canvas");
+	x.setAttribute("data",datapdf);
+	//alert(data);
+	//pdfholder.data(datapdf);
+	
+	 
+	
 }
 
 

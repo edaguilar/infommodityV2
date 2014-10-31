@@ -199,11 +199,13 @@ function cargarDocumentos(){
 function cargardocpdf(){ //data-show="cargarPDF"
 	//var pdfholder = $("#pdf-canvas");
 	var urlPdf = window.location.search.substring(1).replace("url=","").replace(" ","%20");
-	var datapdf ="https://docs.google.com/viewer?url=" + urlPdf +"&embedded=true"
+	var datapdf ="http://docs.google.com/viewer?url=" + urlPdf +"&embedded=true";
+	//alert(datapdf);
 	
 	var x = document.getElementById("pdf-canvas");
+	alert(x.id);
+	//x.setAttribute("src",datapdf);
 	x.setAttribute("data",datapdf);
-	//alert(data);
 	//pdfholder.data(datapdf);
 	
 	 

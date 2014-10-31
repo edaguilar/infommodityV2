@@ -177,7 +177,14 @@ function cargarDocumentos(){
                     template: $("#listview-template").text(),
                     click: function(e) {
                         //window.location = "descargar.html?url=" + encodeURI(e.dataItem.ruta);
-                        window.open(e.dataItem.ruta);
+						alert(e.dataItem.ruta);
+						
+						if (device.platform === "Android")
+						  window.open(e.dataItem.ruta, '_blank');
+						}
+						else
+						  window.open(e.dataItem.ruta, '_system');
+						}
                     }
                 });
 				

@@ -160,6 +160,7 @@ function cargarDocumentos(){
                     click: function(e) {
                         //window.location = "descargar.html?url=" + encodeURI(e.dataItem.ruta);
                         //window.open(e.dataItem.ruta);
+						alert(device.platform);
 						if(device.platform == "Android")
 						{
 							window.location = "viewdoc.html?url=" + encodeURI(e.dataItem.ruta);

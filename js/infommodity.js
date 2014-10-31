@@ -160,7 +160,14 @@ function cargarDocumentos(){
                     click: function(e) {
                         //window.location = "descargar.html?url=" + encodeURI(e.dataItem.ruta);
                         //window.open(e.dataItem.ruta);
-						window.location = "viewdoc.html?url=" + encodeURI(e.dataItem.ruta);
+						if(device.platform == "Android")
+						{
+							window.location = "viewdoc.html?url=" + encodeURI(e.dataItem.ruta);
+						}
+						else
+						{
+							window.open(e.dataItem.ruta);
+						}
                     }
                 });
             }
@@ -203,7 +210,7 @@ function cargardocpdf(){ //data-show="cargarPDF"
 	//alert(datapdf);
 	
 	var x = document.getElementById("pdf-canvas");
-	alert(x.id);
+	//alert(x.id);
 	//x.setAttribute("src",datapdf);
 	x.setAttribute("data",datapdf);
 	//pdfholder.data(datapdf);

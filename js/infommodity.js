@@ -178,13 +178,7 @@ function cargarDocumentos(){
                     click: function(e) {
                         //window.location = "descargar.html?url=" + encodeURI(e.dataItem.ruta);
 						alert(e.dataItem.ruta);
-						
-						if (device.platform === "Android")
-						  window.open(e.dataItem.ruta, '_blank');
-						}
-						else
-						  window.open(e.dataItem.ruta, '_system');
-						}
+						window.open(e.dataItem.ruta, '_blank');
                     }
                 });
 				

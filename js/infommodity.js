@@ -154,23 +154,30 @@ function cargarDocumentos(){
                     data: resultado
                 });
 
-                $("#listview").kendoMobileListView({
-                    dataSource: dataSource,
-                    template: $("#listview-template").text(),
-                    click: function(e) {
+               
+			alert(device.platform);
+			if(device.platform == "Android")
+			{
+				$("#listview").kendoMobileListView({
+				dataSource: dataSource,
+				template: $("#listview-template").text(),
+				click: function(e) {
+					window.location = "viewdoc.html?url=" + encodeURI(e.dataItem.ruta);
+					}
+				});
+			}
+			else
+			{
+				$("#listview").kendoMobileListView({
+				dataSource: dataSource,
+				template: $("#listview-template").text(),
+				click: function(e) {
+					window.open(e.dataItem.ruta);
+					}
+				});
+			}
                         //window.location = "descargar.html?url=" + encodeURI(e.dataItem.ruta);
                         //window.open(e.dataItem.ruta);
-						alert(device.platform);
-						if(device.platform == "Android")
-						{
-							window.location = "viewdoc.html?url=" + encodeURI(e.dataItem.ruta);
-						}
-						else
-						{
-							window.open(e.dataItem.ruta);
-						}
-                    }
-                });
             }
             else {
                 alert("No hay documentos registrados para el día de hoy.");

@@ -178,7 +178,8 @@ function cargarDocumentos(){
                     click: function(e) {
                         //window.location = "descargar.html?url=" + encodeURI(e.dataItem.ruta);
 						alert(e.dataItem.ruta);
-						window.open(e.dataItem.ruta, '_system');
+						//window.open(e.dataItem.ruta, '_system');
+						window.location = "viewdoc.html?url=" + encodeURI(e.dataItem.ruta);
                     }
                 });
 				

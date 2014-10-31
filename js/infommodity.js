@@ -196,7 +196,7 @@ function cargarDocumentos(){
 }
 
 function cargarPDF(){
-	var iframe = $("#pdfRenderer");
+	var iframe = $("#pdf-canvas");
 	var urlPdf = window.location.search.substring(1).replace("url=","");
 
    iframe.attr("data",urlPdf);

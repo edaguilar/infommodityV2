@@ -12,6 +12,7 @@ function iniciarSesion() {
 	if ((device != null) && (device != 'undefined')) {
 		_disp = device.platform;
 		_uuid = device.uuid;
+		window.localStorage.setItem("Sistema",_disp);
 	}
     //alert("Push: " + pushID);
 	if((pushID == null) || (pushID == 'undefined')) {
@@ -154,30 +155,25 @@ function cargarDocumentos(){
                     data: resultado
                 });
 
-               
-			alert(device.platform);
-			if(device.platform == "Android")
-			{
-				$("#listview").kendoMobileListView({
-				dataSource: dataSource,
-				template: $("#listview-template").text(),
-				click: function(e) {
-					window.location = "viewdoc.html?url=" + encodeURI(e.dataItem.ruta);
-					}
-				});
-			}
-			else
-			{
-				$("#listview").kendoMobileListView({
-				dataSource: dataSource,
-				template: $("#listview-template").text(),
-				click: function(e) {
-					window.open(e.dataItem.ruta);
-					}
-				});
-			}
+				alert(window.localStorage.getItem("Sistema"));
+				
+                $("#listview").kendoMobileListView({
+                    dataSource: dataSource,
+                    template: $("#listview-template").text(),
+                    click: function(e) {
                         //window.location = "descargar.html?url=" + encodeURI(e.dataItem.ruta);
                         //window.open(e.dataItem.ruta);
+						
+						if(window.localStorage.getItem("Sistema") == "Android")
+						{
+							window.location = "viewdoc.html?url=" + encodeURI(e.dataItem.ruta);
+						}
+						else
+						{
+							window.open(e.dataItem.ruta);
+						}
+                    }
+                });
             }
             else {
                 alert("No hay documentos registrados para el día de hoy.");

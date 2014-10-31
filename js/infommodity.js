@@ -176,10 +176,10 @@ function cargarDocumentos(){
                     dataSource: dataSource,
                     template: $("#listview-template").text(),
                     click: function(e) {
-                        //window.location = "descargar.html?url=" + encodeURI(e.dataItem.ruta);
 						alert(e.dataItem.ruta);
+                        window.location = "descargar.html?url=" + encodeURI(e.dataItem.ruta);
 						//window.open(e.dataItem.ruta, '_system');
-						window.location = "viewdoc.html?url=" + encodeURI(e.dataItem.ruta);
+						//window.location = "viewdoc.html?url=" + encodeURI(e.dataItem.ruta);
                     }
                 });
 				
@@ -193,6 +193,13 @@ function cargarDocumentos(){
 
 
 
+}
+
+function cargarPDF(){
+	var iframe = $("#pdfRenderer");
+	var urlPdf = window.location.search.substring(1).replace("url=","");
+
+   iframe.attr("data",urlPdf);
 }
 
 

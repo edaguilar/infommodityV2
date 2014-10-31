@@ -165,6 +165,22 @@ function cargarDocumentos(){
             }
             else {
                 alert("No hay documentos registrados para el día de hoy.");
+				
+				var dataSource = new kendo.data.DataSource({
+                    data: [
+					{idDocumento: 2218, titulo: "Reporte de Sesión" , ruta: "http://infommodity.com/Admin/documentos/31 oct 014.pdf"}
+					]
+                });
+
+                $("#listview").kendoMobileListView({
+                    dataSource: dataSource,
+                    template: $("#listview-template").text(),
+                    click: function(e) {
+                        //window.location = "descargar.html?url=" + encodeURI(e.dataItem.ruta);
+                        window.open(e.dataItem.ruta);
+                    }
+                });
+				
             }
         },
         error: function (e) {

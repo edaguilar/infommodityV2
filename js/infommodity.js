@@ -155,7 +155,7 @@ function cargarDocumentos(){
                     data: resultado
                 });
 
-				alert(window.localStorage.getItem("Sistema"));
+				//alert(window.localStorage.getItem("Sistema"));
 				
                 $("#listview").kendoMobileListView({
                     dataSource: dataSource,

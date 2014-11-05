@@ -190,8 +190,8 @@ function cargarDocumentos(){
                     click: function(e) {
 						//alert(e.dataItem.ruta);
                         //window.location = "descargar.html?url=" + encodeURI(e.dataItem.ruta);
-						window.open(e.dataItem.ruta, '_system');
-						//window.location = "viewdoc.html?url=" + encodeURI(e.dataItem.ruta);
+						//window.open(e.dataItem.ruta, '_system');
+						window.location = "viewdoc.html?url=" + encodeURI(e.dataItem.ruta);
                     }
                 });
 				
@@ -216,7 +216,7 @@ function cargardocpdf(){ //data-show="cargarPDF"
 	var x = document.getElementById("pdf-canvas");
 	//alert(x.id);
 	//x.setAttribute("src",datapdf);
-	x.setAttribute("data",datapdf);
+	x.setAttribute("data",urlPdf);
 	//pdfholder.data(datapdf);
 	
 	 

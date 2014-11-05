@@ -215,8 +215,8 @@ function cargardocpdf(){ //data-show="cargarPDF"
 	
 	var x = document.getElementById("pdf-canvas");
 	//alert(x.id);
-	x.setAttribute("src",datapdf);
-	//x.setAttribute("data",datapdf);
+	//x.setAttribute("src",datapdf);
+	x.setAttribute("data",datapdf);
 	//pdfholder.data(datapdf);
 	
 	 

@@ -190,8 +190,8 @@ function cargarDocumentos(){
                     click: function(e) {
 						//alert(e.dataItem.ruta);
                         //window.location = "descargar.html?url=" + encodeURI(e.dataItem.ruta);
-						//window.open(e.dataItem.ruta, '_system');
-						window.location = "viewdoc.html?url=" + encodeURI(e.dataItem.ruta);
+						window.open(e.dataItem.ruta, '_system');
+						//window.location = "viewdoc.html?url=" + encodeURI(e.dataItem.ruta);
                     }
                 });
 				

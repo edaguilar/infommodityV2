@@ -1721,10 +1721,10 @@ function cargarNotificaciones(e){
         });
     }
 	
-	$("#view-1").view.scroller.reset(); 
-	$("#view-2").view.scroller.reset(); 
-	$("#view-3").view.scroller.reset(); 
-	$("#view-4").view.scroller.reset(); 
+	//$("#view-1").view.scroller.reset(); 
+	//$("#view-2").view.scroller.reset(); 
+	//$("#view-3").view.scroller.reset(); 
+	//$("#view-4").data("kendoView").scroller.reset(); 
 }
 
 function cargarSegundoNivel(datos,nombre){
@@ -1798,6 +1798,8 @@ function cargarTercerNivel(datos,nombre){
 function cargarCuartoNivel(datos,nombre){
     window.kendoMobileApplication.navigate("#view-4");
 
+	//$("#listview-4").data("kendoMobileListView").scroller.reset()
+	
     $("#titulo4").text(nombre);
 
     if (yaCargo4toNivel)

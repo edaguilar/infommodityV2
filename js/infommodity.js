@@ -1721,7 +1721,10 @@ function cargarNotificaciones(e){
         });
     }
 	
-	e.view.scroller.reset(); 
+	$("view-1").view.scroller.reset(); 
+	$("view-2").view.scroller.reset(); 
+	$("view-3").view.scroller.reset(); 
+	$("view-4").view.scroller.reset(); 
 }
 
 function cargarSegundoNivel(datos,nombre){

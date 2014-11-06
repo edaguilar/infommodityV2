@@ -108,7 +108,8 @@ function cargarMenuPrincipal() {
             { Titulo: 'Variables', orden: 1, ImgUrl:'icono_variables.png', Url:'variables.html'},
             { Titulo: 'Analisis Diario', orden: 2, ImgUrl:'icono_analisis_diario.png', Url:'analisis-diario.html'},
             { Titulo: 'Notificaciones', orden: 3, ImgUrl:'icono_notificarme.png', Url:'notificaciones.html'},
-            { Titulo: 'Precios Físicos', orden: 4, ImgUrl:'icono_bases.png', Url:'bases.html'}
+            { Titulo: 'Precios Físicos', orden: 4, ImgUrl:'icono_bases.png', Url:'bases.html'},			
+			{ Titulo: 'Posiciones', orden: 5, ImgUrl:'icono_posiciones.png', Url:'posiciones.html'}
         ]
     });
 
@@ -164,37 +165,19 @@ function cargarDocumentos(){
                         //window.location = "descargar.html?url=" + encodeURI(e.dataItem.ruta);
                         //window.open(e.dataItem.ruta);
 						
-						if(window.localStorage.getItem("Sistema") == "Android")
-						{
+						//if(window.localStorage.getItem("Sistema") == "Android")
+						//{
 							window.location = "viewdoc.html?url=" + encodeURI(e.dataItem.ruta);
-						}
-						else
-						{
-							window.open(e.dataItem.ruta);
-						}
+						//}
+						//else
+						//{
+						//	window.open(e.dataItem.ruta);
+						//}
                     }
                 });
             }
             else {
-                alert("No hay documentos registrados para el día de hoy.");
-				
-				var dataSource = new kendo.data.DataSource({
-                    data: [
-					{idDocumento: 2218, titulo: "Reporte de Sesión" , ruta: "http://infommodity.com/Admin/documentos/31 oct 014.pdf"}
-					]
-                });
-
-                $("#listview").kendoMobileListView({
-                    dataSource: dataSource,
-                    template: $("#listview-template").text(),
-                    click: function(e) {
-						//alert(e.dataItem.ruta);
-                        //window.location = "descargar.html?url=" + encodeURI(e.dataItem.ruta);
-						//window.open(e.dataItem.ruta, '_system');
-						window.location = "viewdoc.html?url=" + encodeURI(e.dataItem.ruta);
-                    }
-                });
-				
+                alert("No hay documentos registrados para el día de hoy.");						
             }
         },
         error: function (e) {
@@ -207,8 +190,7 @@ function cargarDocumentos(){
 
 }
 
-function cargardocpdf(){ //data-show="cargarPDF"
-	//var pdfholder = $("#pdf-canvas");
+function cargardocpdf(){ 
 	var urlPdf = window.location.search.substring(1).replace("url=","").replace(" ","%20");
 	var datapdf ="http://docs.google.com/viewer?url=" + urlPdf +"&embedded=true";
 	//alert(datapdf);
@@ -985,28 +967,10 @@ function cambiarHeaderAnalisisDiario(idCommodity) {
         headerFecha.attr("class", "fondoTrigo");
     else if (idCommodity == 3) //Soya
         headerFecha.attr("class", "fondoSoya");
-    else if (idCommodity == 4) //Arroz
-        headerFecha.attr("class", "fondoArroz");
-    else if (idCommodity == 5) //Algodon
-        headerFecha.attr("class", "fondoAlgodon");
     else if (idCommodity == 6) //Sorgo
         headerFecha.attr("class", "fondoSorgo");
-    else if (idCommodity == 10) //Gas
-        headerFecha.attr("class", "fondoGas");
-    else if (idCommodity == 11) //Petróleo
-        headerFecha.attr("class", "fondoPetroleo");
     else if (idCommodity == 12) //Pasta de Soya
         headerFecha.attr("class", "fondoPastaSoya");
-    else if (idCommodity == 13) //Cerdo
-        headerFecha.attr("class", "fondoCerdo");
-    else if (idCommodity == 14) //Res
-        headerFecha.attr("class", "fondoRes");
-    else if (idCommodity == 15) //Pollo
-        headerFecha.attr("class", "fondoPollo");
-    else if (idCommodity == 16) //Azucar
-        headerFecha.attr("class", "fondoAzucar");
-    else if (idCommodity == 17) //Leche
-        headerFecha.attr("class", "fondoLeche");
 }
 /* End Análisis Diario */
 
@@ -1469,6 +1433,232 @@ function seleccionarTodasLasNotificaciones(){
 }
 
 /* END BASES */
+/* POSICIONES */
+var yaCargoPosicionesCommodity = false;
+var yaCargoUnidadesPosicion = false;
+function cargarPosicionesCommodity() {
+
+    variablesCommodityActivo = true;    
+    variablesTablaActivo = false;
+	variablesUnidadActivo = false;
+    
+	if (!yaCargoPosicionesCommodity){
+        obtenerPosicionesCommodity();
+    }
+    cambiarColorFondoTabs();
+    
+}
+
+function obtenerPosicionesCommodity()
+{
+    cargando();
+    var url = urlBase + "ObtenerCommoditiesPosiciones";
+
+    $.ajax({
+        url: url,
+        crossDomain: true,
+        type: "POST",
+        dataType: "json",
+        contentType: "application/json; charset=uft-8",
+        success: function (e) {
+            var t = JSON.parse(JSON.stringify(e));
+            var docs = "[" + t.ObtenerCommoditiesPosicionesResult.replace(/}{/g,"},{") + "]";
+            var resultado = JSON.parse(docs);
+
+            var dataSource = new kendo.data.DataSource({
+                data: resultado
+            });
+
+            $("#listview-commodity").kendoMobileListView({
+                dataSource: dataSource,
+                template: $("#listview-template").text(),
+                click: function(e) {
+                    window.sessionStorage.setItem("idPosicionCommodity", e.dataItem.idCommodity); 
+                    window.sessionStorage.removeItem("idUnidad");					
+                    seleccionarCommodityPosicion();
+					obtenerUnidadPosicion();
+                }
+            });
+
+            //Selecciona el primero
+            if (window.sessionStorage.getItem("idPosicionCommodity") == null)
+                window.sessionStorage.setItem("idPosicionCommodity",resultado[0].idCommodity);
+            seleccionarCommodityPosicion();
+            yaCargoPosicionesCommodity = true;
+            terminoCargando();
+			
+			obtenerUnidadPosicion();
+        },
+        error: function (e) {
+            console.log(e);
+            terminoCargando();
+        }
+    });
+}
+
+function seleccionarCommodityPosicion(){
+    var idVariable =  window.sessionStorage.getItem("idPosicionCommodity");
+
+    $("#listview-commodity").find("div[class='renglonVariable']").each(function(index){
+        var idActual = $(this).find("input[type='hidden']").val();
+        var img = $(this).find("img");
+        if (idActual == idVariable)
+            img.attr("src","imgs/variables/icono_lista_selected.png");
+        else
+            img.attr("src","imgs/variables/icono_lista_unselected.png");
+    });
+}
+
+function cargarPosicionesUnidad(){
+    variablesCommodityActivo = false;
+    variablesUnidadActivo = true;
+    variablesTablaActivo = false;
+
+    var titulo = $("span[data-role='view-title']");
+    $.each(titulo,function(i,obj){
+        $(obj).removeAttr("style");
+    });
+
+    if (!yaCargoPosicionesCommodity) {
+        obtenerPosicionesCommodity();
+    }
+
+    cambiarColorFondoTabs();
+
+}
+function obtenerUnidadPosicion() {
+
+    cargando();
+    var url = urlBase + "ObtenerUnidadesPosicion";
+
+    $.ajax({
+        url: url,
+        crossDomain: true,
+        type: "POST",
+        dataType: "json",
+        contentType: "application/json; charset=uft-8",
+        success: function (e) {
+            var t = JSON.parse(JSON.stringify(e));
+            var docs = "[" + t.ObtenerUnidadesPosicionResult.replace(/}{/g,"},{") + "]";
+            var resultado = JSON.parse(docs);
+
+            //console.log(docs);
+            var dataSource = new kendo.data.DataSource({
+                data: resultado
+            });
+
+            var listViewHtml = $("#listview-unidad");
+            if (yaCargoUnidadesPosicion){
+                listViewHtml.data("kendoMobileListView").destroy();
+            }
+
+            listViewHtml.kendoMobileListView({
+                dataSource: dataSource,
+                template: $("#listview-template-unidad").text(),
+                click: function(e) {
+                    window.sessionStorage.setItem("idUnidad", e.dataItem.idUnidad);
+                    window.sessionStorage.setItem("unidad", e.dataItem.unidad);
+
+                    seleccionarUnidadPosicion();
+                }
+            });
+
+            //Selecciona el primero
+            if (window.sessionStorage.getItem("idUnidad") == null) {
+                window.sessionStorage.setItem("idUnidad",resultado[0].idUnidad);
+                window.sessionStorage.setItem("unidad", resultado[0].unidad);
+            }
+            seleccionarUnidadPosicion();
+            terminoCargando();
+            yaCargoUnidadesPosicion = true;
+        },
+        error: function (e) {
+            console.log(e);
+            terminoCargando();
+        }
+    });
+}
+function seleccionarUnidadPosicion(){
+    var idVariable =  window.sessionStorage.getItem("idUnidad");
+
+    $("#listview-unidad").find("div[class='renglonVariable']").each(function(index){
+        var idActual = $(this).find("input[type='hidden']").val();
+        var img = $(this).find("img");
+        if (idActual == idVariable)
+            img.attr("src","imgs/variables/icono_lista_selected.png");
+        else
+            img.attr("src","imgs/variables/icono_lista_unselected.png");
+    });
+}
+function cargarPosicionTabla(){
+	cargando();
+    variablesCommodityActivo = false;	
+	variablesUnidadActivo = false;
+    variablesTablaActivo = true;
+	
+    var idCommodity = window.sessionStorage.getItem("idPosicionCommodity");
+	var idUnidad = window.sessionStorage.getItem("idUnidad");
+	var idUsuarioMovil = window.localStorage.getItem("idUsuario");
+
+    var url = urlBase + "ObtenerTablaPosicion";
+    var params = JSON.stringify({
+        idCommodity : idCommodity,
+        idUsuarioMovil: idUsuarioMovil,
+		idUnidad : idUnidad
+    });
+	
+    console.log(params);
+    //$.support.cors = true;
+    $.ajax({
+        url: url,
+        crossDomain: true,
+        type: "POST",
+        dataType: "json",
+        contentType: "application/json; charset=uft-8",
+        data: params,
+        success: function (e) {
+            //console.log(e);
+            var t = JSON.parse(JSON.stringify(e));
+            var renglones = "[" + t.ObtenerTablaPosicionResult.replace(/}{/g,"},{") + "]";
+            var resultado = JSON.parse(renglones);
+            //console.log(resultado);
+
+            var dataSource = new kendo.data.DataSource({
+                data: resultado
+            });
+
+            $("#listview-tabla").kendoMobileListView({
+                dataSource: dataSource,
+                template: $("#listview-template-tabla").text()
+            });
+            window.sessionStorage.setItem("idTabla",0);
+
+			for(var i = 0; i < dataSource._total; i++){
+				dataSource.data()[i].v1 = addCommas(dataSource.data()[i].v1);
+				dataSource.data()[i].v2 = addCommas(dataSource.data()[i].v2);
+				dataSource.data()[i].v3 = addCommas(dataSource.data()[i].v3);
+				dataSource.data()[i].v4 = addCommas(dataSource.data()[i].v4);
+				dataSource.data()[i].v5 = addCommas(dataSource.data()[i].v5);
+				dataSource.data()[i].v6 = addCommas(dataSource.data()[i].v6);
+			}
+            //Recorre todos para ver cuantos renglones
+            dataSource.fetch();
+            var dataSourceData = dataSource.data();
+
+            terminoCargando();
+        },
+        error: function (e) {
+            console.log(e);
+            terminoCargando();
+        }
+    });
+
+    cambiarEstiloHeaderParaTabla(true);
+    cambiarColorFondoTabs();
+	//e.view.scroller.reset(); 
+}
+/* END POSICIONES */
+
 var arbolDeNotificaciones;
 function cargarNotificaciones(e){
     var url = urlBase + "ObtenArbolNotificaciones";

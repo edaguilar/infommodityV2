@@ -1806,7 +1806,6 @@ function cargarCuartoNivel(datos,nombre){
 	var vw = kendo.mobile.application.view();
 	vw.scroller.reset(); 
 	
-	alert("cuarto");
     $("#titulo4").text(nombre);
 
     if (yaCargo4toNivel)

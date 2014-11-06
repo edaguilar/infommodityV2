@@ -860,7 +860,7 @@ function graficar() {
 /* Análisis diario */
 
 var yaCargoCommodityAnalisisDiario = false;
-function cargarAnalisisCommodity(e) {
+function cargarAnalisisCommodity() {
 
 
     //window.sessionStorage.setItem("idCommodity", 0);
@@ -910,7 +910,6 @@ function cargarAnalisisCommodity(e) {
             }
         });
     }
-	e.view.scroller.reset(); 
 }
 
 function cargarAnalisisDiario(e){
@@ -977,7 +976,7 @@ function cambiarHeaderAnalisisDiario(idCommodity) {
 
 /* BASES  */
 var yaCargoBasesCommodity = false;
-function cargarBasesCommodity(e) {
+function cargarBasesCommodity() {
 
     variablesCommodityActivo = true;
     variableBaseActivo = false;
@@ -989,10 +988,9 @@ function cargarBasesCommodity(e) {
     }
     cambiarColorFondoTabs();
     cambiarEstiloHeaderParaTabla(false);
-	e.view.scroller.reset(); 
 }
 
-function obtenerBasesCommodity(e)
+function obtenerBasesCommodity()
 {
     cargando();
     var url = urlBase + "ObtenerCommoditiesBases";
@@ -1041,10 +1039,9 @@ function obtenerBasesCommodity(e)
             terminoCargando();
         }
     });
-	e.view.scroller.reset(); 
 }
 
-function obtenerTipoBase(e) {
+function obtenerTipoBase() {
 
     cargando();
     var url = urlBase + "ObtenerTipoBases";
@@ -1094,10 +1091,9 @@ function obtenerTipoBase(e) {
             terminoCargando();
         }
     });
-	e.view.scroller.reset(); 
 }
 
-function obtenerUnidad(e) {
+function obtenerUnidad() {
 
     cargando();
     var url = urlBase + "ObtenerUnidadesBases";
@@ -1154,7 +1150,6 @@ function obtenerUnidad(e) {
             terminoCargando();
         }
     });
-	e.view.scroller.reset(); 
 }
 
 function cargarBasesTipo(){
@@ -1514,7 +1509,7 @@ function seleccionarCommodityPosicion(){
     });
 }
 
-function cargarPosicionesUnidad(){
+function cargarPosicionesUnidad(e){
     variablesCommodityActivo = false;
     variablesUnidadActivo = true;
     variablesTablaActivo = false;
@@ -1529,7 +1524,7 @@ function cargarPosicionesUnidad(){
     }
 
     cambiarColorFondoTabs();
-
+	e.view.scroller.reset(); 
 }
 function obtenerUnidadPosicion() {
 
@@ -1595,7 +1590,7 @@ function seleccionarUnidadPosicion(){
             img.attr("src","imgs/variables/icono_lista_unselected.png");
     });
 }
-function cargarPosicionTabla(){
+function cargarPosicionTabla(e){
 	cargando();
     variablesCommodityActivo = false;	
 	variablesUnidadActivo = false;
@@ -1660,7 +1655,7 @@ function cargarPosicionTabla(){
 
     cambiarEstiloHeaderParaTabla(true);
     cambiarColorFondoTabs();
-	//e.view.scroller.reset(); 
+	e.view.scroller.reset(); 
 }
 /* END POSICIONES */
 

@@ -213,11 +213,18 @@ function cargardocpdf(){ //data-show="cargarPDF"
 	var datapdf ="http://docs.google.com/viewer?url=" + urlPdf +"&embedded=true";
 	//alert(datapdf);
 	
-	var x = document.getElementById("pdf-canvas");
-	//alert(x.id);
-	//x.setAttribute("src",datapdf);
-	x.setAttribute("data",urlPdf);
+	var contenedor = document.getElementById("pdf-canvas");
+	//alert(contenedor.id);
+	//contenedor.setAttribute("src",datapdf);
+	contenedor.setAttribute("data",datapdf);
 	//pdfholder.data(datapdf);
+	 var windowWidth = window.innerWidth
+	var windowHeight = window.innerHeight;
+		contenedor.width = windowWidth;
+        contenedor.height = windowHeight;
+		
+	contenedor.setAttribute("style","width:" + windowWidth + "px;height:" + windowHeight + "px;");
+
 	
 	 
 	

@@ -860,7 +860,7 @@ function graficar() {
 /* Análisis diario */
 
 var yaCargoCommodityAnalisisDiario = false;
-function cargarAnalisisCommodity() {
+function cargarAnalisisCommodity(e) {
 
 
     //window.sessionStorage.setItem("idCommodity", 0);
@@ -910,9 +910,10 @@ function cargarAnalisisCommodity() {
             }
         });
     }
+	e.view.scroller.reset(); 
 }
 
-function cargarAnalisisDiario(){
+function cargarAnalisisDiario(e){
 
     cargando();
     var idCommodity = window.sessionStorage.getItem("idCommodity");
@@ -951,7 +952,7 @@ function cargarAnalisisDiario(){
             terminoCargando();
         }
     });
-
+	e.view.scroller.reset(); 
 }
 
 function cambiarHeaderAnalisisDiario(idCommodity) {
@@ -976,7 +977,7 @@ function cambiarHeaderAnalisisDiario(idCommodity) {
 
 /* BASES  */
 var yaCargoBasesCommodity = false;
-function cargarBasesCommodity() {
+function cargarBasesCommodity(e) {
 
     variablesCommodityActivo = true;
     variableBaseActivo = false;
@@ -988,9 +989,10 @@ function cargarBasesCommodity() {
     }
     cambiarColorFondoTabs();
     cambiarEstiloHeaderParaTabla(false);
+	e.view.scroller.reset(); 
 }
 
-function obtenerBasesCommodity()
+function obtenerBasesCommodity(e)
 {
     cargando();
     var url = urlBase + "ObtenerCommoditiesBases";
@@ -1039,9 +1041,10 @@ function obtenerBasesCommodity()
             terminoCargando();
         }
     });
+	e.view.scroller.reset(); 
 }
 
-function obtenerTipoBase() {
+function obtenerTipoBase(e) {
 
     cargando();
     var url = urlBase + "ObtenerTipoBases";
@@ -1091,9 +1094,10 @@ function obtenerTipoBase() {
             terminoCargando();
         }
     });
+	e.view.scroller.reset(); 
 }
 
-function obtenerUnidad() {
+function obtenerUnidad(e) {
 
     cargando();
     var url = urlBase + "ObtenerUnidadesBases";
@@ -1150,6 +1154,7 @@ function obtenerUnidad() {
             terminoCargando();
         }
     });
+	e.view.scroller.reset(); 
 }
 
 function cargarBasesTipo(){
@@ -1436,7 +1441,7 @@ function seleccionarTodasLasNotificaciones(){
 /* POSICIONES */
 var yaCargoPosicionesCommodity = false;
 var yaCargoUnidadesPosicion = false;
-function cargarPosicionesCommodity() {
+function cargarPosicionesCommodity(e) {
 
     variablesCommodityActivo = true;    
     variablesTablaActivo = false;
@@ -1446,7 +1451,7 @@ function cargarPosicionesCommodity() {
         obtenerPosicionesCommodity();
     }
     cambiarColorFondoTabs();
-    
+    e.view.scroller.reset(); 
 }
 
 function obtenerPosicionesCommodity()

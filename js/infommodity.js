@@ -976,7 +976,7 @@ function cambiarHeaderAnalisisDiario(idCommodity) {
 
 /* BASES  */
 var yaCargoBasesCommodity = false;
-function cargarBasesCommodity() {
+function cargarBasesCommodity(e) {
 
     variablesCommodityActivo = true;
     variableBaseActivo = false;
@@ -988,6 +988,8 @@ function cargarBasesCommodity() {
     }
     cambiarColorFondoTabs();
     cambiarEstiloHeaderParaTabla(false);
+	
+	e.view.scroller.reset(); 
 }
 
 function obtenerBasesCommodity()
@@ -1152,7 +1154,7 @@ function obtenerUnidad() {
     });
 }
 
-function cargarBasesTipo(){
+function cargarBasesTipo(e){
     variablesCommodityActivo = false;
     variableBaseActivo = true;
     variablesUnidadActivo = false;
@@ -1169,9 +1171,10 @@ function cargarBasesTipo(){
 
     //obtenerTipoBase();
     cambiarColorFondoTabs();
+	e.view.scroller.reset(); 
 }
 
-function cargarBasesUnidad(){
+function cargarBasesUnidad(e){
     variablesCommodityActivo = false;
     variableBaseActivo = false;
     variablesUnidadActivo = true;
@@ -1188,9 +1191,10 @@ function cargarBasesUnidad(){
 
     cambiarColorFondoTabs();
 
+	e.view.scroller.reset(); 
 }
 
-function cargarBasesTabla(){
+function cargarBasesTabla(e){
     cargando();
     variablesCommodityActivo = false;
     variableBaseActivo = false;
@@ -1249,7 +1253,8 @@ function cargarBasesTabla(){
     });
 
     cambiarColorFondoTabs();
-
+	
+	e.view.scroller.reset(); 
 }
 
 function irGraficaBases(origen,destino,tipoPrecio,titulo){
@@ -1797,9 +1802,11 @@ function cargarTercerNivel(datos,nombre){
 
 function cargarCuartoNivel(datos,nombre){
     window.kendoMobileApplication.navigate("#view-4");
-
-	//$("#listview-4").data("kendoMobileListView").scroller.reset()
 	
+	var vw = kendo.mobile.application.view();
+	vw.scroller.reset(); 
+	
+	alert("cuarto");
     $("#titulo4").text(nombre);
 
     if (yaCargo4toNivel)

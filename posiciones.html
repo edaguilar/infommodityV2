@@ -1,127 +1,127 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, minimum-scale=1, width=device-width"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" type="text/css" href="css/infommodity.css">
-    <link rel="stylesheet" type="text/css" href="css/kendo.mobile.all.min.css">
-    <script src="js/jquery-2.0.3.min.js"></script>
-    <script src="js/kendo.all.min.js"></script>
-    <script src="js/jquery.blockUI.js"></script>
-    <script src="js/infommodity.js"></script>
-    <title>Posiciones</title>
-</head>
-<body>
-<div id="tabstrip-commodity" data-role="view" data-show="cargarPosicionesCommodity" data-title="COMMODITY"
-     data-layout="mobile-tabstrip">
-    <div data-role="content" class="cuerpoTabla">
-        <ul id="listview-commodity"></ul>
-    </div>
-</div>
-<div id="tabstrip-analisis" data-role="view" data-show="cargarPosicionesUnidad" data-title="UNIDAD"
-     data-layout="mobile-tabstrip">
-     <div data-role="content" class="cuerpoTabla">
-            <ul id="listview-unidad"></ul>
-    </div>
-</div>
-<div id="tabstrip-tabla" data-role="view" data-show="cargarPosicionTabla" data-title="TABLA"
-     data-layout="mobile-tabstrip">
-    <div data-role="content" class="cuerpoTabla">
-        <ul id="listview-tabla"></ul>
-    </div>
-</div>
-
-<div data-role="layout" data-id="mobile-tabstrip">
-    <header class="header" data-role="header">
-        <div data-role="navbar">
-            <div class="fondo">
-                <div class="logo"></div>
-            </div>
-            <div class="flechaAtras" ontouchstart="goMenu()">
-            </div>
-            <div class="titulo">
-                VER POSICIONES
-            </div>
-        </div>
-    </header>
-    <div data-role="footer">
-        <div data-role="tabstrip">
-            <a href="#tabstrip-commodity" data-icon="commodity">COMMODITY</a>
-			<a href="#tabstrip-analisis" data-icon="unidad">UNIDAD</a>
-            <a href="#tabstrip-tabla" data-icon="tabla">TABLA</a>
-        </div>
-    </div>
-
-</div>
-
-<img id="displayBox" src="imgs/Loader2.gif" width="80" height="80" style="display:none" alt="Cargando..."/>
-<script type="text/x-kendo-tmpl" id="listview-template">
-    <div class="renglonVariable">
-        <div class="docsIzqImg">
-            <img id="imgLista#:idCommodity#" src="imgs/variables/icono_lista_unselected.png" style="width:35px; height: 35px;"/>
-        </div>
-        <div class="variableTitulo">
-            #:commodity#
-        </div>
-        <input type="hidden" id="idCommodity" value="#:idCommodity#"/>
-    </div>
-</script>
-<script type="text/x-kendo-tmpl" id="listview-template-unidad">
-    <div class="renglonVariable">
-        <div class="docsIzqImg">
-            <img id="imgLista#:idUnidad#" src="imgs/variables/icono_lista_unselected.png" style="width:35px; height: 35px;"/>
-        </div>
-        <div class="variableTitulo">
-            #:unidad#
-        </div>
-        <input type="hidden" id="idUnidad" value="#:idUnidad#"/>
-    </div>
-</script>
-<script type="text/x-kendo-tmpl" id="listview-template-tabla">
-    # var id = parseInt(window.sessionStorage.getItem("idTabla")); #	
-	# var unidad = window.sessionStorage.getItem("unidad"); #
-    <div id="renglonTabla_#:id#" class="divTabla3">
-        <div class="headerTabla">
-            <div class="tablaVariable">
-                <span><b>#:posicion#</b></span>
-            </div>
-            <div class="unidades">
-                <span><b>Fecha:</b> #:fecha#</span>
-            </div>            
-        </div>
-        <div style="height:100%">
-            <table id="tablaVariables_#:id#" class="tableCommodities" >
-                <tr>
-                    <td class="txtIzq">Lotes</td>
-                    <td class="txtDer #: obtenerColor(lotes)#">#:lotes#</td>
-                    <td class="txtIzq">Precio Ejercicio</td>
-                    <td class="txtDer #: obtenerColor(precioEjercicio)#">#:precioEjercicio#</td>
-                </tr>
-                <tr>
-                    <td class="txtIzq">Precio Ejercicio Corto</td>
-                    <td class="txtDer #: obtenerColor(precioEjercicioCorto)#">#:precioEjercicioCorto#</td>
-                    <td class="txtIzq">Importe Cts</td>
-                    <td class="txtDer #: obtenerColor(importeCtvs)#">#:importeCtvs#</td>
-                </tr>
-                <tr id="ultimaFila_#:id#">
-                    <td class="txtIzq">USD /TM</td>
-                    <td class="txtDer #: obtenerColor(importeUSD)#">#:importeUSD#</td>
-                    <td class="txtIzq">Precio Final #:unidad#</td>
-                    <td class="txtDer #: obtenerColor(precioFinal)#">#:precioFinal#</td>
-                </tr>
-            </table>
-        </div>
-    </div>
-</script>
-
-<script type="application/javascript">
-    window.kendoMobileApplication = new kendo.mobile.Application(document.body, {
-        skin: "flat"
-    });
-	$(document).ready(function(){
-		$(this).scrollTop(0);
-	});
-</script>
-</body>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, minimum-scale=1, width=device-width"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="css/infommodity.css">
+    <link rel="stylesheet" type="text/css" href="css/kendo.mobile.all.min.css">
+    <script src="js/jquery-2.0.3.min.js"></script>
+    <script src="js/kendo.all.min.js"></script>
+    <script src="js/jquery.blockUI.js"></script>
+    <script src="js/infommodity.js"></script>
+    <title>Posiciones</title>
+</head>
+<body>
+<div id="tabstrip-commodity" data-role="view" data-show="cargarPosicionesCommodity" data-title="COMMODITY"
+     data-layout="mobile-tabstrip">
+    <div data-role="content" class="cuerpoTabla">
+        <ul id="listview-commodity"></ul>
+    </div>
+</div>
+<div id="tabstrip-analisis" data-role="view" data-show="cargarPosicionesUnidad" data-title="UNIDAD"
+     data-layout="mobile-tabstrip">
+     <div data-role="content" class="cuerpoTabla">
+            <ul id="listview-unidad"></ul>
+    </div>
+</div>
+<div id="tabstrip-tabla" data-role="view" data-show="cargarPosicionTabla" data-title="TABLA"
+     data-layout="mobile-tabstrip">
+    <div data-role="content" class="cuerpoTabla">
+        <ul id="listview-tabla"></ul>
+    </div>
+</div>
+
+<div data-role="layout" data-id="mobile-tabstrip">
+    <header class="header" data-role="header">
+        <div data-role="navbar">
+            <div class="fondo">
+                <div class="logo"></div>
+            </div>
+            <div class="flechaAtras" ontouchstart="goMenu()">
+            </div>
+            <div class="titulo">
+                VER POSICIONES
+            </div>
+        </div>
+    </header>
+    <div data-role="footer">
+        <div data-role="tabstrip">
+            <a href="#tabstrip-commodity" data-icon="commodity">COMMODITY</a>
+			<a href="#tabstrip-analisis" data-icon="unidad">UNIDAD</a>
+            <a href="#tabstrip-tabla" data-icon="tabla">TABLA</a>
+        </div>
+    </div>
+
+</div>
+
+<img id="displayBox" src="imgs/Loader2.gif" width="80" height="80" style="display:none" alt="Cargando..."/>
+<script type="text/x-kendo-tmpl" id="listview-template">
+    <div class="renglonVariable">
+        <div class="docsIzqImg">
+            <img id="imgLista#:idCommodity#" src="imgs/variables/icono_lista_unselected.png" style="width:35px; height: 35px;"/>
+        </div>
+        <div class="variableTitulo">
+            #:commodity#
+        </div>
+        <input type="hidden" id="idCommodity" value="#:idCommodity#"/>
+    </div>
+</script>
+<script type="text/x-kendo-tmpl" id="listview-template-unidad">
+    <div class="renglonVariable">
+        <div class="docsIzqImg">
+            <img id="imgLista#:idUnidad#" src="imgs/variables/icono_lista_unselected.png" style="width:35px; height: 35px;"/>
+        </div>
+        <div class="variableTitulo">
+            #:unidad#
+        </div>
+        <input type="hidden" id="idUnidad" value="#:idUnidad#"/>
+    </div>
+</script>
+<script type="text/x-kendo-tmpl" id="listview-template-tabla">
+    # var id = parseInt(window.sessionStorage.getItem("idTabla")); #	
+	# var unidad = window.sessionStorage.getItem("unidad"); #
+    <div id="renglonTabla_#:id#" class="divTabla3">
+        <div class="headerTabla">
+            <div class="tablaVariable">
+                <span><b>#:posicion#</b></span>
+            </div>
+            <div class="unidades">
+                <span><b>Fecha:</b> #:fecha#</span>
+            </div>            
+        </div>
+        <div style="height:100%">
+            <table id="tablaVariables_#:id#" class="tableCommodities" >
+                <tr>
+                    <td class="txtIzq">Lotes</td>
+                    <td class="txtDer #: obtenerColor(lotes)#">#:lotes#</td>
+                    <td class="txtIzq">Precio Ejercicio</td>
+                    <td class="txtDer #: obtenerColor(precioEjercicio)#">#:precioEjercicio#</td>
+                </tr>
+                <tr>
+                    <td class="txtIzq">Precio Ejercicio Corto</td>
+                    <td class="txtDer #: obtenerColor(precioEjercicioCorto)#">#:precioEjercicioCorto#</td>
+                    <td class="txtIzq">Importe Cts</td>
+                    <td class="txtDer #: obtenerColor(importeCtvs)#">#:importeCtvs#</td>
+                </tr>
+                <tr id="ultimaFila_#:id#">
+                    <td class="txtIzq">USD /TM</td>
+                    <td class="txtDer #: obtenerColor(importeUSD)#">#:importeUSD#</td>
+                    <td class="txtIzq">Precio Final #:unidad#</td>
+                    <td class="txtDer #: obtenerColor(precioFinal)#">#:precioFinal#</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</script>
+
+<script type="application/javascript">
+    window.kendoMobileApplication = new kendo.mobile.Application(document.body, {
+        skin: "flat"
+    });
+	$(document).ready(function(){
+		$(this).scrollTop(0);
+	});
+</script>
+</body>
 </html>

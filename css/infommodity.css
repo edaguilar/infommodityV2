@@ -1,227 +1,228 @@
-body {
-    font-family:Verdana;
-    width:100%;
-    float:left;
-    /*height:800px;*/
-    min-height:100%;
-    /*position:relative;*/
-    margin:0:/* auto;*/
-	
-}
-.fondoLogin {
-    background: url('../imgs/login/fnd_login.jpg') top center !important;
-    background-size:100%;
-	position:absolute;top:0;bottom:0;left:0;right:0;
-	height:100%;
-}
-
-.cajaLogin {
-    background: url('../imgs/login/fnd_datos_login.png') /*no-repeat*/ top center;
-    background-size:100%;
-    height:20% !important; /*250px;*/
-    width: 100% !important;
-    margin-top:100px;
-    display:table;
-}
-
-.controlesLogin {
-    display:table-cell;
-    vertical-align: middle;
-    text-align: center;
-    padding-top: 15%; /*25px;*/
-	vertical-align: bottom;
-}
-
-.controlesLogin input { width: 80%; /*width: 430px;*/ padding:7px !important; border-radius:8px; }
-
-.renglon { width: 100%;text-align: center; padding-bottom: 15px; }
-.renglonIzq { float: left; width: 50%;}
-.renglonDer { float: right; width: 50%;}
-
-
-/* MENU */
-
-#view {width:100%; height: 100%;}
-.header { width: 100%; float:left; position: absolute; top:0; height:80px; background: #646A70; color:white; text-align: center; float:left;}
-.fondo { background: url('../imgs/variables/fnd_titulos_variables.jpg') no-repeat; background-size: 100%; width:100%; height:50px}
-.titulo { line-height: 30px; }
-.logo { background: url('../imgs/header_logo.png') no-repeat top center; background-size: 350px; width:100%; height: 100%; }
-
-.cuerpoTabla { width:100% !important; height: 100%; position: absolute; background: url('../imgs/fnd_general.jpg')  top center !important;  background-size:100% !important;  float:left; display: block; /*background-color:red;*/}
-
-@media only screen and (device-width: 768px) {
-  /* iPad screen size rules */
-   * .cuerpoTabla  { float:left; }
-}
- 
-@media only screen and (min-device-width: 481px) and 
-(max-device-width: 1024px) and (orientation:portrait) {
-  /* Portrait iPad display */
-  .cuerpoTabla  { float:left; }
-}
- 
-@media only screen and (min-device-width: 481px) and 
-(max-device-width: 1024px) and (orientation:landscape) {
-  /* Landscape iPad display */
-   .cuerpoTabla  { float:left; }
-}
-
-
-#listview,
-#listview ul,
-#listview li
-{width:100%; 
- /*background-color:Lime;*/
- }
-
-.renglonMenu { width: 100%;text-align: left; padding: 5px;  color:white; background: url('../imgs/menu/fnd_botones.jpg') repeat-x;  float:left;}
-.menuIzqImg { float:left; width: 46px;}
-.menuTitulo { line-height: 60px; padding-left:15px; float:left;}
-.menuFlecha {  float:right;}
-/* END MENU */
-
-
-.flechaAtras { position: absolute; top: 5px; left: 5px; width: 40px; height: 40px; background: url('../imgs/icono_regresar.png') no-repeat center; background-size: 80%;  }
-.botonMenu { position: absolute; top: 5px; right: 5px; width: 40px; height: 40px; background: url('../imgs/icono_menu.png') no-repeat center; background-size: 80%;  }
-.docsIzqImg { float:left; width: 46px; padding: 7px 0 0 6px;}
-
-#iframe { border: 0; width:100%; float:left;}
-.cuerpoTablaDoc { width: 100%; height: 100%; background: #fff;  background-size:100%;  float:left; }
-
-.km-root .km-pane .km-view .km-commodity {
-    background-size: 100% 100% !important;
-    -webkit-background-clip: border-box !important;
-    background-color:white;
-    padding-bottom: 5px;
-}
-
-.km-commodity {
-    -webkit-mask-box-image: url("../imgs/variables/icono_btn_commodity_active.png");
-    width: 32px !important;
-    height:30px !important;
-}
-
-.km-root .km-pane .km-view .km-variables {
-    background-size: 100% 100% !important;
-    -webkit-background-clip: border-box !important;
-    background-color:white;
-    padding-bottom: 5px;
-}
-
-.km-variables {
-    -webkit-mask-box-image: url("../imgs/variables/icono_btn_variables_active.png");
-    height:28px !important;
-}
-
-.km-root .km-pane .km-view .km-analisis {
-    background-size: 100% 100% !important;
-    -webkit-background-clip: border-box !important;
-    background-color:white;
-    padding-bottom: 5px;
-}
-
-.km-analisis {
-    -webkit-mask-box-image: url("../imgs/variables/icono_btn_analisis_off_active.png");
-    height:23px !important;
-}
-
-.km-root .km-pane .km-view .km-tabla {
-    background-size: 100% 100% !important;
-    -webkit-background-clip: border-box !important;
-    background-color:white;
-    padding-bottom: 5px;
-}
-
-.km-tabla {
-    -webkit-mask-box-image: url("../imgs/variables/icono_btn_tabla_active.png");
-    height:25px !important;
-    width:25px !important;
-}
-
-.km-root .km-pane .km-view .km-base {
-    background-size: 100% 100% !important;
-    -webkit-background-clip: border-box !important;
-    background-color:white;
-    padding-bottom: 5px;
-}
-
-.km-base {
-    -webkit-mask-box-image: url("../imgs/bases/icono_btn_tipoBases_active.png");
-    height:25px !important;
-    width:25px !important;
-}
-.km-root .km-pane .km-view .km-unidad {
-    background-size: 100% 100% !important;
-    -webkit-background-clip: border-box !important;
-    background-color:white;
-    padding-bottom: 5px;
-}
-
-.km-unidad {
-    -webkit-mask-box-image: url("../imgs/bases/icono_btn_unidad_active.png");
-    height:25px !important;
-    width:25px !important;
-}
-
-
-.renglonVariable { width: 100%;text-align: left; padding: 5px; float:left; border-bottom: 1px solid #E6E6E6;}
-.variableTitulo { line-height: 45px; padding-left:15px; float:left;}
-
-#fechaAnalisis { width:100%; float: left; height:50px;}
-
-.fondoMaiz { background: url("../imgs/variables/fnd_titulos_variables.jpg") no-repeat; background-size: 100%; }
-.fondoTrigo { background: url("../imgs/variables/fnd_titulos_variables_trigo.jpg") no-repeat; background-size: 100%; }
-.fondoSoya { background: url("../imgs/variables/fnd_titulos_variables_soya.jpg") no-repeat; background-size: 100%; }
-.fondoArroz { background: url("../imgs/variables/fnd_titulos_variables_arroz.jpg") no-repeat; background-size: 100%; }
-.fondoAlgodon { background: url("../imgs/variables/fnd_titulos_variables_algodon.jpg") no-repeat; background-size: 100%; }
-.fondoSorgo { background: url("../imgs/variables/fnd_titulos_variables_sorgo.jpg") no-repeat; background-size: 100%; }
-.fondoGas { background: url("../imgs/variables/fnd_titulos_variables_gas.jpg") no-repeat; background-size: 100%; }
-.fondoPetroleo { background: url("../imgs/variables/fnd_titulos_variables_petroleo.jpg") no-repeat; background-size: 100%; }
-.fondoPastaSoya { background: url("../imgs/variables/fnd_titulos_variables_pasta_soya.jpg") no-repeat; background-size: 100%; }
-.fondoCerdo { background: url("../imgs/variables/fnd_titulos_variables_porcino.jpg") no-repeat; background-size: 100%; }
-.fondoRes { background: url("../imgs/variables/fnd_titulos_variables_res.jpg") no-repeat; background-size: 100%; }
-.fondoPollo { background: url("../imgs/variables/fnd_titulos_variables_aves.jpg") no-repeat; background-size: 100%; }
-.fondoAzucar { background: url("../imgs/variables/fnd_titulos_variables_azucar.jpg") no-repeat; background-size: 100%; }
-.fondoLeche { background: url("../imgs/variables/fnd_titulos_variables_leche.jpg") no-repeat; background-size: 100%; }
-
-
-.txtFecha { background: rgba(184,184,184,.7);width: 70%; padding: 5px; margin-top: 9px; font-size:18px;}
-#contenidoAnalisis { padding:2px; text-align: justify }
-
-
-/* TABLA COMMODITIES */
-#renglonTabla {}
-.divTabla3 { background: url("../imgs/variables/fnd_datos_tabla_3.jpg") no-repeat; background-size: 100% 100%; height:120px; }
-.divTabla2 { background: url("../imgs/variables/fnd_datos_tabla_2.jpg") no-repeat; background-size: 100% 100%; height:90px; }
-
-.tableCommodities { border:0; width: 100%; height:80%; padding:0; margin:0;}
-.tableCommodities td { width: 25%; text-align: center;}
-.tableCommodities .txtIzq { color:#fff; font-size:0.7em; }
-.tableCommodities .txtDer { color:#000; font-size: 0.9em; }
-
-.verde { color: #3DA601 !important; }
-.rojo { color: red !important }
-.negro { color: black !important; }
-.gris { color: #808080 !important; }
-
-.btnIrAGrafica {float:right;padding-right:3px}
-.unidades {float:left; padding:5px 0 0 0; width:39%; white-space:nowrap; font-size:10px; overflow:hidden; text-overflow:ellipsis}
-.tablaVariable {float:left; padding:5px; width:50%;white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
-.headerTabla {width:100%; float:left; font-size: 10px; color:white;}
-.grafica {background: #5f5f5f;}
-
-/* TABLA BASES */
-
-.divTablaBases2 { background: url("../imgs/bases/fnd_dosColumnas.png") no-repeat; background-size: 100% 100%; height:80px; }
-.divTablaBases1 { background: url("../imgs/bases/fnd_UnaColumnas.png") no-repeat; background-size: 100% 100%; height:90px; }
-.tablaVariableBase { padding: 2px 0 0 5px}
-.tablaVariableOrigen { float: left; padding: 0 0 0 5px; width: 50%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.destino  { float: left; width: 39%; white-space: nowrap; font-size: 10px; overflow: hidden; text-overflow: ellipsis;}
-
-.tablaBases { border:0; width: 100%; height:60px; padding:0; margin:0;}
-.tablaBases td {width: 60%; text-align: left; }
-.tablaBases .txtIzq { color:#fff; font-size:0.7em; }
-.tablaBases .txtDer { color:#000; font-size: 0.9em; }
-
-
-
+body {
+    font-family:Verdana;
+    width:100%;
+    float:left;
+    /*height:800px;*/
+    min-height:100%;
+    /*position:relative;*/
+    margin:0:/* auto;*/
+	
+}
+.fondoLogin {
+    background: url('../imgs/login/fnd_login.jpg') top center !important;
+    background-size:100%;
+	position:absolute;top:0;bottom:0;left:0;right:0;
+	height:100%;
+}
+
+.cajaLogin {
+    background: url('../imgs/login/fnd_datos_login.png') /*no-repeat*/ top center;
+    background-size:100%;
+    height:20% !important; /*250px;*/
+    width: 100% !important;
+    margin-top:100px;
+    display:table;
+}
+
+.controlesLogin {
+    display:table-cell;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 15%; /*25px;*/
+	vertical-align: bottom;
+}
+
+.controlesLogin input { width: 80%; /*width: 430px;*/ padding:7px !important; border-radius:8px; }
+
+.renglon { width: 100%;text-align: center; padding-bottom: 15px; }
+.renglonIzq { float: left; width: 50%;}
+.renglonDer { float: right; width: 50%;}
+
+
+/* MENU */
+
+#view {width:100%; height: 100%;}
+.header { width: 100%; float:left; position: absolute; top:0; height:80px; background: #646A70; color:white; text-align: center; float:left;}
+.fondo { background: url('../imgs/variables/fnd_titulos_variables.jpg') no-repeat; background-size: 100%; width:100%; height:50px}
+.titulo { line-height: 30px; }
+.logo { background: url('../imgs/header_logo.png') no-repeat top center; background-size: 350px; width:100%; height: 100%; }
+
+.cuerpoTabla { width:100% !important; height: 100%; position: absolute; background: url('../imgs/fnd_general.jpg')  top center !important;  background-size:100% !important;  float:left; display: block; /*background-color:red;*/}
+
+@media only screen and (device-width: 768px) {
+  /* iPad screen size rules */
+   * .cuerpoTabla  { float:left; }
+}
+ 
+@media only screen and (min-device-width: 481px) and 
+(max-device-width: 1024px) and (orientation:portrait) {
+  /* Portrait iPad display */
+  .cuerpoTabla  { float:left; }
+}
+ 
+@media only screen and (min-device-width: 481px) and 
+(max-device-width: 1024px) and (orientation:landscape) {
+  /* Landscape iPad display */
+   .cuerpoTabla  { float:left; }
+}
+
+
+#listview,
+#listview ul,
+#listview li
+{width:100%; 
+ /*background-color:Lime;*/
+ }
+
+.renglonMenu { width: 100%;text-align: left; padding: 5px;  color:white; background: url('../imgs/menu/fnd_botones.jpg') repeat-x;  float:left;}
+.menuIzqImg { float:left; width: 46px;}
+.menuTitulo { line-height: 60px; padding-left:15px; float:left;}
+.menuFlecha {  float:right;}
+/* END MENU */
+
+
+.flechaAtras { position: absolute; top: 5px; left: 5px; width: 40px; height: 40px; background: url('../imgs/icono_regresar.png') no-repeat center; background-size: 80%;  }
+.botonMenu { position: absolute; top: 5px; right: 5px; width: 40px; height: 40px; background: url('../imgs/icono_menu.png') no-repeat center; background-size: 80%;  }
+.docsIzqImg { float:left; width: 46px; padding: 7px 0 0 6px;}
+
+#iframe { border: 0; width:100%; float:left;}
+.cuerpoTablaDoc { width: 100%; height: 100%; background: #fff;  background-size:100%;  float:left; }
+
+.km-root .km-pane .km-view .km-commodity {
+    background-size: 100% 100% !important;
+    -webkit-background-clip: border-box !important;
+    background-color:white;
+    padding-bottom: 5px;
+}
+
+.km-commodity {
+    -webkit-mask-box-image: url("../imgs/variables/icono_btn_commodity_active.png");
+    width: 32px !important;
+    height:30px !important;
+}
+
+.km-root .km-pane .km-view .km-variables {
+    background-size: 100% 100% !important;
+    -webkit-background-clip: border-box !important;
+    background-color:white;
+    padding-bottom: 5px;
+}
+
+.km-variables {
+    -webkit-mask-box-image: url("../imgs/variables/icono_btn_variables_active.png");
+    height:28px !important;
+}
+
+.km-root .km-pane .km-view .km-analisis {
+    background-size: 100% 100% !important;
+    -webkit-background-clip: border-box !important;
+    background-color:white;
+    padding-bottom: 5px;
+}
+
+.km-analisis {
+    -webkit-mask-box-image: url("../imgs/variables/icono_btn_analisis_off_active.png");
+    height:23px !important;
+}
+
+.km-root .km-pane .km-view .km-tabla {
+    background-size: 100% 100% !important;
+    -webkit-background-clip: border-box !important;
+    background-color:white;
+    padding-bottom: 5px;
+}
+
+.km-tabla {
+    -webkit-mask-box-image: url("../imgs/variables/icono_btn_tabla_active.png");
+    height:25px !important;
+    width:25px !important;
+}
+
+.km-root .km-pane .km-view .km-base {
+    background-size: 100% 100% !important;
+    -webkit-background-clip: border-box !important;
+    background-color:white;
+    padding-bottom: 5px;
+}
+
+.km-base {
+    -webkit-mask-box-image: url("../imgs/bases/icono_btn_tipoBases_active.png");
+    height:25px !important;
+    width:25px !important;
+}
+.km-root .km-pane .km-view .km-unidad {
+    background-size: 100% 100% !important;
+    -webkit-background-clip: border-box !important;
+    background-color:white;
+    padding-bottom: 5px;
+}
+
+.km-unidad {
+    -webkit-mask-box-image: url("../imgs/bases/icono_btn_unidad_active.png");
+    height:25px !important;
+    width:25px !important;
+}
+
+
+.renglonVariable { width: 100%;text-align: left; padding: 5px; float:left; border-bottom: 1px solid #E6E6E6;}
+.variableTitulo { line-height: 45px; padding-left:15px; float:left;}
+
+#fechaAnalisis { width:100%; float: left; height:50px;}
+
+.fondoMaiz { background: url("../imgs/variables/fnd_titulos_variables.jpg") no-repeat; background-size: 100%; }
+.fondoTrigo { background: url("../imgs/variables/fnd_titulos_variables_trigo.jpg") no-repeat; background-size: 100%; }
+.fondoSoya { background: url("../imgs/variables/fnd_titulos_variables_soya.jpg") no-repeat; background-size: 100%; }
+.fondoArroz { background: url("../imgs/variables/fnd_titulos_variables_arroz.jpg") no-repeat; background-size: 100%; }
+.fondoAlgodon { background: url("../imgs/variables/fnd_titulos_variables_algodon.jpg") no-repeat; background-size: 100%; }
+.fondoSorgo { background: url("../imgs/variables/fnd_titulos_variables_sorgo.jpg") no-repeat; background-size: 100%; }
+.fondoGas { background: url("../imgs/variables/fnd_titulos_variables_gas.jpg") no-repeat; background-size: 100%; }
+.fondoPetroleo { background: url("../imgs/variables/fnd_titulos_variables_petroleo.jpg") no-repeat; background-size: 100%; }
+.fondoPastaSoya { background: url("../imgs/variables/fnd_titulos_variables_pasta_soya.jpg") no-repeat; background-size: 100%; }
+.fondoCerdo { background: url("../imgs/variables/fnd_titulos_variables_porcino.jpg") no-repeat; background-size: 100%; }
+.fondoRes { background: url("../imgs/variables/fnd_titulos_variables_res.jpg") no-repeat; background-size: 100%; }
+.fondoPollo { background: url("../imgs/variables/fnd_titulos_variables_aves.jpg") no-repeat; background-size: 100%; }
+.fondoAzucar { background: url("../imgs/variables/fnd_titulos_variables_azucar.jpg") no-repeat; background-size: 100%; }
+.fondoLeche { background: url("../imgs/variables/fnd_titulos_variables_leche.jpg") no-repeat; background-size: 100%; }
+
+
+.txtFecha { background: rgba(184,184,184,.7);width: 70%; padding: 5px; margin-top: 9px; font-size:18px;}
+#contenidoAnalisis { padding:2px; text-align: justify }
+
+
+/* TABLA COMMODITIES */
+#renglonTabla {}
+.divTabla3SinGrafica { background: url("../imgs/variables/fnd_datos_tabla_3_SinGrafica.jpg") no-repeat; background-size: 100% 100%; height:120px; }
+.divTabla3 { background: url("../imgs/variables/fnd_datos_tabla_3.jpg") no-repeat; background-size: 100% 100%; height:120px; }
+.divTabla2 { background: url("../imgs/variables/fnd_datos_tabla_2.jpg") no-repeat; background-size: 100% 100%; height:90px; }
+
+.tableCommodities { border:0; width: 100%; height:80%; padding:0; margin:0;}
+.tableCommodities td { width: 25%; text-align: center;}
+.tableCommodities .txtIzq { color:#fff; font-size:0.7em; }
+.tableCommodities .txtDer { color:#000; font-size: 0.9em; }
+
+.verde { color: #3DA601 !important; }
+.rojo { color: red !important }
+.negro { color: black !important; }
+.gris { color: #808080 !important; }
+
+.btnIrAGrafica {float:right;padding-right:3px}
+.unidades {float:left; padding:5px 0 0 0; width:39%; white-space:nowrap; font-size:10px; overflow:hidden; text-overflow:ellipsis}
+.tablaVariable {float:left; padding:5px; width:50%;white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.headerTabla {width:100%; float:left; font-size: 10px; color:white;}
+.grafica {background: #5f5f5f;}
+
+/* TABLA BASES */
+
+.divTablaBases2 { background: url("../imgs/bases/fnd_dosColumnas.png") no-repeat; background-size: 100% 100%; height:80px; }
+.divTablaBases1 { background: url("../imgs/bases/fnd_UnaColumnas.png") no-repeat; background-size: 100% 100%; height:90px; }
+.tablaVariableBase { padding: 2px 0 0 5px}
+.tablaVariableOrigen { float: left; padding: 0 0 0 5px; width: 50%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.destino  { float: left; width: 39%; white-space: nowrap; font-size: 10px; overflow: hidden; text-overflow: ellipsis;}
+
+.tablaBases { border:0; width: 100%; height:60px; padding:0; margin:0;}
+.tablaBases td {width: 60%; text-align: left; }
+.tablaBases .txtIzq { color:#fff; font-size:0.7em; }
+.tablaBases .txtDer { color:#000; font-size: 0.9em; }
+
+
+

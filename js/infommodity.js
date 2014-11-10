@@ -1562,7 +1562,7 @@ function obtenerUnidadPosicion() {
                 template: $("#listview-template-unidad").text(),
                 click: function(e) {
                     window.sessionStorage.setItem("idUnidad", e.dataItem.idUnidad);
-                    window.sessionStorage.setItem("unidad", e.dataItem.unidad);
+                    window.sessionStorage.setItem("unidadPosicion", e.dataItem.unidad);
 
                     seleccionarUnidadPosicion();
                 }
@@ -1571,7 +1571,7 @@ function obtenerUnidadPosicion() {
             //Selecciona el primero
             if (window.sessionStorage.getItem("idUnidad") == null) {
                 window.sessionStorage.setItem("idUnidad",resultado[0].idUnidad);
-                window.sessionStorage.setItem("unidad", resultado[0].unidad);
+                window.sessionStorage.setItem("unidadPosicion", resultado[0].unidad);
             }
             seleccionarUnidadPosicion();
             terminoCargando();

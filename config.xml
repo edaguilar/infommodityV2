@@ -63,14 +63,22 @@
     <icon src="imgs/iconos/ios/120.png" gap:platform="ios" width="120" height="120" />
     <icon src="imgs/iconos/ios/152.png" gap:platform="ios" width="152" height="152" />
     <icon src="imgs/iconos/ios/76.png" gap:platform="ios" width="76" height="76" />
-{ñ.
+
     <!-- Permisos -->
-    <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />
+    <!--<gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />
 	<gap:plugin name="org.apache.cordova.device" version="0.2.12" />
 	<gap:plugin name="org.apache.cordova.dialogs" version="0.2.10" />
 	<gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
 	<gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
-	<gap:plugin name="org.apache.cordova.splashscreen" version="0.3.3" />
+	<gap:plugin name="org.apache.cordova.splashscreen" version="0.3.3" />-->
+	
+	<plugin name="com.phonegap.plugins.pushplugin" source="pgb" spec="2.4.0" />
+	<plugin name="org.apache.cordova.device" source="pgb" spec="0.2.12" />
+	<plugin name="org.apache.cordova.dialogs" source="pgb" spec="0.2.10" />
+	<plugin name="org.apache.cordova.geolocation" source="pgb" spec="0.3.10" />
+	<plugin name="org.apache.cordova.network-information" source="pgb" spec="0.2.12" />
+	<plugin name="org.apache.cordova.splashscreen" source="pgb" spec="0.3.3" />
+
 
 
 

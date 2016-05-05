@@ -34,10 +34,10 @@ alert("usuario: " + usuario);//
     //$.support.cors = true;
     $.ajax({
         url: url,
-        crossDomain: true,
-        type: "GET",//POST
+        //crossDomain: true,
+        type: "POST",//
         dataType: "json",
-        //contentType: "application/json; charset=utf-8",
+        contentType: "application/json; charset=utf-8",
         data: params,
         success: function (e) {
             console.log(e);

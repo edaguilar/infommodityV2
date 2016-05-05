@@ -35,7 +35,7 @@ alert("usuario: " + usuario);//
     $.ajax({
         url: url,
         crossDomain: true,
-        type: "POST",
+        type: "GET",//POST
         dataType: "json",
         contentType: "application/json; charset=utf-8",
         data: params,

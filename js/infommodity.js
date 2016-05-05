@@ -21,6 +21,7 @@ alert("usuario: " + usuario);//
 	}
 	
     var url = urlBase + "AutentificarUsuario";
+    alert("URLBase: " + url);//
     var params = JSON.stringify({
         correo : usuario,
         clave : contrasena,
@@ -29,6 +30,7 @@ alert("usuario: " + usuario);//
         poshToken: pushID
     });
     console.log(params);
+    alert("Params: " + params);//
     //$.support.cors = true;
     $.ajax({
         url: url,

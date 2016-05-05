@@ -5,7 +5,7 @@ var urlBase = 'http://app.infommodity.com/Infommodity.svc/';
 function iniciarSesion() {
     var usuario = $("#txtUsuario").val();
     var contrasena = $("#txtPassword").val();
-
+alert("usuario: " + usuario);//
 	var _disp = "No Dispositivo";
 	var _uuid = "No Disponible";
 	var pushID = window.localStorage.getItem("pushID");
@@ -14,7 +14,8 @@ function iniciarSesion() {
 		_uuid = device.uuid;
 		window.localStorage.setItem("Sistema",_disp);
 	}
-    //alert("Push: " + pushID);
+	alert("device: " + _disp + " uuid: " + _uuid);//
+    alert("Push: " + pushID);//
 	if((pushID == null) || (pushID == 'undefined')) {
 		pushID = "00";
 	}
@@ -50,6 +51,7 @@ function iniciarSesion() {
         },
         error: function (e) {
             console.log(e);
+            alert(e);//
         }
     });
 
@@ -92,7 +94,7 @@ function validaUsuario(){
         }
     });
 
-			//alert(esValido);
+			alert("esValido: " + esValido);//
 			//return esValido;
 
 }

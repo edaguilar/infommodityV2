@@ -37,7 +37,7 @@ alert("usuario: " + usuario);//
         crossDomain: true,
         type: "POST",
         dataType: "json",
-        contentType: "application/json; charset=uft-8",
+        contentType: "application/json; charset=utf-8",
         data: params,
         success: function (e) {
             console.log(e);

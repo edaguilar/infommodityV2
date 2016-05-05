@@ -49,9 +49,9 @@ alert("usuario: " + usuario);//
                alert(resultado.mensaje);
             }
         },
-        error: function (e) {
-            console.log(e);
-            alert(e);//
+        error: function(XMLHttpRequest, textStatus, errorThrown) { //function(e)
+        alert("Status: " + textStatus); alert("Error: " + errorThrown); //
+            //console.log(e);
         }
     });
 
@@ -88,8 +88,8 @@ function validaUsuario(){
 				window.location.replace("index.html");
 			}
         },
-        error: function (e) {
-            alert(e);
+        error: function(XMLHttpRequest, textStatus, errorThrown) { //function(e)
+        	alert("Status: " + textStatus); alert("Error: " + errorThrown); //
 			esValido = false;
         }
     });

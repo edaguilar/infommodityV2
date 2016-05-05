@@ -37,7 +37,7 @@ alert("usuario: " + usuario);//
         crossDomain: true,
         type: "GET",//POST
         dataType: "json",
-        contentType: "application/json; charset=utf-8",
+        //contentType: "application/json; charset=utf-8",
         data: params,
         success: function (e) {
             console.log(e);
@@ -52,7 +52,7 @@ alert("usuario: " + usuario);//
             }
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) { //function(e)
-        alert("Status: " + textStatus); alert("Error: " + errorThrown); //
+        alert("Status: " + textStatus); alert("Error: " + errorThrown); alert(" RequestError: " + XMLHttpRequest.responseText);//
             //console.log(e);
         }
     });

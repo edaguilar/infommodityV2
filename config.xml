@@ -66,19 +66,20 @@
 
 {ñ.
      <!-- Permisos -->
-    <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />
+    <!--<gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />
 	<gap:plugin name="org.apache.cordova.device" version="0.2.12" />
 	<gap:plugin name="org.apache.cordova.dialogs" version="0.2.10" />
 	<gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
 	<gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
-	<gap:plugin name="org.apache.cordova.splashscreen" version="0.3.3" />
+	<gap:plugin name="org.apache.cordova.splashscreen" version="0.3.3" />-->
 	
-	<!--<gap:plugin name="com.phonegap.plugins.pushplugin" version="2.5.0" />
+	<gap:plugin name="com.phonegap.plugins.pushplugin" version="2.5.0" />
 	<gap:plugin name="org.apache.cordova.device" version="0.3.0" />
 	<gap:plugin name="org.apache.cordova.dialogs" version="0.3.0" />
 	<gap:plugin name="org.apache.cordova.geolocation" version="0.3.12" />
 	<gap:plugin name="org.apache.cordova.network-information" version="0.2.15" />
-	<gap:plugin name="org.apache.cordova.splashscreen" version="1.0.0" />-->
+	<gap:plugin name="org.apache.cordova.splashscreen" version="1.0.0" />
+	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
 
 
 

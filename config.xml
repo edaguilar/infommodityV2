@@ -79,7 +79,7 @@
 	<gap:plugin name="org.apache.cordova.geolocation" version="0.3.12" />
 	<gap:plugin name="org.apache.cordova.network-information" version="0.2.15" />
 	<gap:plugin name="org.apache.cordova.splashscreen" version="1.0.0" />
-	<gap:plugin name="cordova-plugin-whitelist" spec="1.2.2" />
+	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
 
 
 

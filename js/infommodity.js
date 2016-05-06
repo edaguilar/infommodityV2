@@ -51,8 +51,8 @@ alert("usuario: " + usuario);//
                alert(resultado.mensaje);
             }
         },
-        error: function(XMLHttpRequest, textStatus, errorThrown) { //function(e)
-        alert("Status: " + textStatus); alert("Error: " + errorThrown); alert(" RequestError: " + XMLHttpRequest.responseText);//
+        error: function(jqXHR, textStatus, errorThrown) { //function(e)
+        alert("Status: " + textStatus); alert("Error: " + errorThrown); alert(" RequestError: " + jqXHR.responseText);//
             //console.log(e);
         }
     });

@@ -18,7 +18,8 @@
     <!-- Multi-Platform -->
     <preference name="orientation" value="portrait" />
     <preference name="fullscreen" value="true" />
-	<preference name="WebViewBounce" value="true" /> 
+    <preference name="WebViewBounce" value="true" /> 
+    <preference name="load-url-timeout" value="60000" />
 
     <!-- iOS Only -->
     <preference name="target-device" value="universal" />
@@ -26,7 +27,7 @@
     <preference name="ios-statusbarstyle" value="default" />
     <preference name="detect-data-types" value="false" />
     <preference name="exit-on-suspend" value="false" />
-	<preference name="AutoHideSplashScreen" value="false" />
+    <preference name="AutoHideSplashScreen" value="false" />
 
     <!-- Android only -->
     <preference name="android-minSdkVersion" value="9" />
@@ -35,7 +36,7 @@
     <preference name="android-installLocation" value="auto" />
     <preference name="android-windowSoftInputMode" value="stateUnspecified|adjustResize" />
     <!--<preference name="splash-screen-duration" value="1000"/>-->
-	<preference name="SplashScreenDelay" value="10000"/>
+    <preference name="SplashScreenDelay" value="15000"/>
     <preference name="KeyboardShrinksView" value="false" />
 
     <!-- Splash 

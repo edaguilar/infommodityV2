@@ -36,7 +36,7 @@
     <preference name="android-installLocation" value="auto" />
     <preference name="android-windowSoftInputMode" value="stateUnspecified|adjustResize" />
     <!--<preference name="splash-screen-duration" value="1000"/>-->
-    <preference name="SplashScreenDelay" value="10000"/>
+    <preference name="SplashScreenDelay" value="20000"/>
     <preference name="KeyboardShrinksView" value="false" />
 
     <!-- Splash 

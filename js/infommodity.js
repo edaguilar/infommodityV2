@@ -5,7 +5,7 @@ var urlBase = 'http://app.infommodity.com/Infommodity.svc/';
 function iniciarSesion() {
     var usuario = $("#txtUsuario").val();
     var contrasena = $("#txtPassword").val();
-alert("usuario: " + usuario);//
+//alert("usuario: " + usuario);//
 	var _disp = "No Dispositivo";
 	var _uuid = "No Disponible";
 	var pushID = window.localStorage.getItem("pushID");
@@ -14,14 +14,14 @@ alert("usuario: " + usuario);//
 		_uuid = device.uuid;
 		window.localStorage.setItem("Sistema",_disp);
 	}
-	alert("device: " + _disp + " uuid: " + _uuid);//
-    alert("Push: " + pushID);//
+	//alert("device: " + _disp + " uuid: " + _uuid);//
+    //alert("Push: " + pushID);//
 	if((pushID == null) || (pushID == 'undefined')) {
 		pushID = "00";
 	}
 	
     var url = urlBase + "AutentificarUsuario";
-    alert("URLBase: " + url);//
+    //alert("URLBase: " + url);//
     var params = JSON.stringify({
         correo : usuario,
         clave : contrasena,
@@ -30,11 +30,11 @@ alert("usuario: " + usuario);//
         poshToken: pushID
     });
     console.log(params);
-    alert("Params: " + params);//
+    //alert("Params: " + params);//
     //$.support.cors = true;
     $.ajax({
         url: url,
-        //crossDomain: true,
+        crossDomain: true,
         type: "POST",//
         dataType: "json",
         contentType: "application/json; charset=utf-8",
@@ -52,8 +52,8 @@ alert("usuario: " + usuario);//
             }
         },
         error: function(jqXHR, textStatus, errorThrown) { //function(e)
-        alert("Status: " + textStatus); alert("Error: " + errorThrown); alert(" RequestError: " + jqXHR.responseText);//
-            //console.log(e);
+        //alert("Status: " + textStatus); alert("Error: " + errorThrown); alert(" RequestError: " + jqXHR.responseText);//
+            console.log(e);
         }
     });
 
@@ -75,7 +75,7 @@ function validaUsuario(){
         crossDomain: true,
         type: "POST",
         dataType: "json",
-        contentType: "application/json; charset=uft-8",
+        contentType: "application/json; charset=utf-8",
         data: params,		
         success: function (e) {
             //console.log(e);
@@ -96,7 +96,7 @@ function validaUsuario(){
         }
     });
 
-			alert("esValido: " + esValido);//
+			//alert("esValido: " + esValido);//
 			//return esValido;
 
 }
@@ -147,7 +147,7 @@ function cargarDocumentos(){
         crossDomain: true,
         type: "POST",
         dataType: "json",
-        contentType: "application/json; charset=uft-8",
+        contentType: "application/json; charset=utf-8",
         success: function (e) {
             var t = JSON.parse(JSON.stringify(e));
             var docs = "[" + t.ObtenDocumentosResult.replace(/}{/g,"},{") + "]";
@@ -277,7 +277,7 @@ function obtenerCommodities() {
         crossDomain: true,
         type: "POST",
         dataType: "json",
-        contentType: "application/json; charset=uft-8",
+        contentType: "application/json; charset=utf-8",
         data: params,
         success: function (e) {
             var t = JSON.parse(JSON.stringify(e));
@@ -381,7 +381,7 @@ function cargarValoresDeVariables(idCommodity){
         crossDomain: true,
         type: "POST",
         dataType: "json",
-        contentType: "application/json; charset=uft-8",
+        contentType: "application/json; charset=utf-8",
         data: params,
         success: function (e) {
             var t = JSON.parse(JSON.stringify(e));
@@ -473,7 +473,7 @@ function cargarVarAnalisis(e) {
         crossDomain: true,
         type: "POST",
         dataType: "json",
-        contentType: "application/json; charset=uft-8",
+        contentType: "application/json; charset=utf-8",
         data: params,
         success: function (e) {
             //console.log(e);
@@ -535,7 +535,7 @@ function cargarVarTabla(e) {
         crossDomain: true,
         type: "POST",
         dataType: "json",
-        contentType: "application/json; charset=uft-8",
+        contentType: "application/json; charset=utf-8",
         data: params,
         success: function (e) {
             //console.log(e);
@@ -714,7 +714,7 @@ function graficar() {
         crossDomain: true,
         type: "POST",
         dataType: "json",
-        contentType: "application/json; charset=uft-8",
+        contentType: "application/json; charset=utf-8",
         data: params,
         success: function (e) {
             console.log(e);
@@ -883,7 +883,7 @@ function cargarAnalisisCommodity() {
             crossDomain: true,
             type: "POST",
             dataType: "json",
-            contentType: "application/json; charset=uft-8",
+            contentType: "application/json; charset=utf-8",
             data: params,
             success: function (e) {
                 var t = JSON.parse(JSON.stringify(e));
@@ -931,7 +931,7 @@ function cargarAnalisisDiario(e){
         crossDomain: true,
         type: "POST",
         dataType: "json",
-        contentType: "application/json; charset=uft-8",
+        contentType: "application/json; charset=utf-8",
         data: params,
         success: function (e) {
 
@@ -1006,7 +1006,7 @@ function obtenerBasesCommodity()
         crossDomain: true,
         type: "POST",
         dataType: "json",
-        contentType: "application/json; charset=uft-8",
+        contentType: "application/json; charset=utf-8",
         success: function (e) {
             var t = JSON.parse(JSON.stringify(e));
             var docs = "[" + t.ObtenerCommoditiesBasesResult.replace(/}{/g,"},{") + "]";
@@ -1057,7 +1057,7 @@ function obtenerTipoBase() {
         crossDomain: true,
         type: "POST",
         dataType: "json",
-        contentType: "application/json; charset=uft-8",
+        contentType: "application/json; charset=utf-8",
         success: function (e) {
             var t = JSON.parse(JSON.stringify(e));
             var docs = "[" + t.ObtenerTipoBasesResult.replace(/}{/g,"},{") + "]";
@@ -1114,7 +1114,7 @@ function obtenerUnidad() {
         crossDomain: true,
         type: "POST",
         dataType: "json",
-        contentType: "application/json; charset=uft-8",
+        contentType: "application/json; charset=utf-8",
         data: params,
         success: function (e) {
             var t = JSON.parse(JSON.stringify(e));
@@ -1223,7 +1223,7 @@ function cargarBasesTabla(e){
         crossDomain: true,
         type: "POST",
         dataType: "json",
-        contentType: "application/json; charset=uft-8",
+        contentType: "application/json; charset=utf-8",
         data: params,
         success: function (e) {
             console.log(e);
@@ -1305,7 +1305,7 @@ function obtenerGraficaBases(){
         crossDomain: true,
         type: "POST",
         dataType: "json",
-        contentType: "application/json; charset=uft-8",
+        contentType: "application/json; charset=utf-8",
         data: params,
         success: function (e) {
             console.log(e);
@@ -1468,7 +1468,7 @@ function obtenerPosicionesCommodity()
         crossDomain: true,
         type: "POST",
         dataType: "json",
-        contentType: "application/json; charset=uft-8",
+        contentType: "application/json; charset=utf-8",
         success: function (e) {
             var t = JSON.parse(JSON.stringify(e));
             var docs = "[" + t.ObtenerCommoditiesPosicionesResult.replace(/}{/g,"},{") + "]";
@@ -1545,7 +1545,7 @@ function obtenerUnidadPosicion() {
         crossDomain: true,
         type: "POST",
         dataType: "json",
-        contentType: "application/json; charset=uft-8",
+        contentType: "application/json; charset=utf-8",
         success: function (e) {
             var t = JSON.parse(JSON.stringify(e));
             var docs = "[" + t.ObtenerUnidadesPosicionResult.replace(/}{/g,"},{") + "]";
@@ -1623,7 +1623,7 @@ function cargarPosicionTabla(e){
         crossDomain: true,
         type: "POST",
         dataType: "json",
-        contentType: "application/json; charset=uft-8",
+        contentType: "application/json; charset=utf-8",
         data: params,
         success: function (e) {
             //console.log(e);
@@ -1679,7 +1679,7 @@ function cargarNotificaciones(e){
             crossDomain: true,
             type: "POST",
             dataType: "json",
-            contentType: "application/json; charset=uft-8",
+            contentType: "application/json; charset=utf-8",
             success: function (e) {
                 var t = JSON.parse(JSON.stringify(e));
                 var arbol = "[" + t.ObtenArbolNotificacionesResult.replace(/}{/g,"},{") + "]";
@@ -2080,7 +2080,7 @@ function cargarConfiguracionUsuario(){
         type: "POST",
         dataType: "json",
         data: params,
-        contentType: "application/json; charset=uft-8",
+        contentType: "application/json; charset=utf-8",
         success: function (e) {
             notificacionesSeleccionadas = [];
             console.log(e);
@@ -2119,7 +2119,7 @@ function guardarNotificaciones(){
         type: "POST",
         dataType: "json",
         data: params,
-        contentType: "application/json; charset=uft-8",
+        contentType: "application/json; charset=utf-8",
         success: function (e) {
             notificacionesSeleccionadas = [];
             console.log(e);

@@ -2,8 +2,8 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "mx.com.softelligence.Infommodity"
-        versionCode="12"
-        version   = "1.0.12">
+        versionCode="13"
+        version   = "1.0.13">
 
     <!-- versionCode is optional and Android only -->
     <name>Infommodity</name>
@@ -11,7 +11,7 @@
     <author href="http://infommodity.com/" email="eaguilar@softelligence.com.mx">Infommodity</author>
 
     <!-- Plataformas que soporte -->
-    <preference name="phonegap-version" value="cli-6.3.0" />
+    <preference name="phonegap-version" value="cli-6.4.0" />
     <gap:platform name="ios" />
     <gap:platform name="android" />
 
@@ -31,7 +31,7 @@
 
     <!-- Android only -->
     <preference name="android-minSdkVersion" value="9" />
-    <preference name="android-maxSdkVersion" value="23" />
+    <preference name="android-maxSdkVersion" value="25" />
     <preference name="android-targetSdkVersion" value="14" />
     <preference name="android-installLocation" value="auto" />
     <preference name="android-windowSoftInputMode" value="stateUnspecified|adjustResize" />
